@@ -1,12 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Prospect Rating</value>
-        </caseValues>
-        <name>rating_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
     <fields>
         <label><!-- Active --></label>
         <name>Active__c</name>
