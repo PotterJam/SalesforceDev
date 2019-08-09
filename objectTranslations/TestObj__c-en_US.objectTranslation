@@ -12,4 +12,9 @@
         <label><!-- Reply --></label>
         <name>EmailSend</name>
     </quickActions>
+    <recordTypes>
+        <description><!-- An amazing record type --></description>
+        <label><!-- TestRecordType --></label>
+        <name>TestRecordTypeName</name>
+    </recordTypes>
 </CustomObjectTranslation>
