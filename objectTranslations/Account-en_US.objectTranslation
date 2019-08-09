@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
         <label><!-- Active --></label>
         <name>Active__c</name>
@@ -187,6 +187,10 @@
     <recordTypes>
         <label><!-- RecordTypeTest --></label>
         <name>RecordTypeTest</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- abc --></label>
+        <name>abc</name>
     </recordTypes>
     <webLinks>
         <label><!-- Billing --></label>
