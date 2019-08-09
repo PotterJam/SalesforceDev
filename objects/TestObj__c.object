@@ -70,10 +70,4 @@
     <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
-    <recordTypes>
-        <fullName>TestRecordTypeName</fullName>
-        <active>true</active>
-        <description>An amazing record type</description>
-        <label>TestRecordType</label>
-    </recordTypes>
 </CustomObject>
