@@ -17,4 +17,9 @@
         <label><!-- TestRecordType --></label>
         <name>TestRecordTypeName</name>
     </recordTypes>
+    <recordTypes>
+        <description><!-- Less amazing --></description>
+        <label><!-- NewTest --></label>
+        <name>NewTestName</name>
+    </recordTypes>
 </CustomObjectTranslation>
