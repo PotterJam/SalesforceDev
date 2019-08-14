@@ -70,10 +70,4 @@
     <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
-    <validationRules>
-        <fullName>validationruletest</fullName>
-        <active>true</active>
-        <errorConditionFormula>CreatedBy.IsActive</errorConditionFormula>
-        <errorMessage>Test error</errorMessage>
-    </validationRules>
 </CustomObject>
