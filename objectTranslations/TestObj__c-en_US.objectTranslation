@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
         <value>TestObj</value>
@@ -8,21 +8,9 @@
         <value>TestObjs</value>
     </caseValues>
     <startsWith>Consonant</startsWith>
-    <fieldSets>
-        <label><!-- fieldsettest --></label>
-        <name>fieldsettestname</name>
-    </fieldSets>
-    <fieldSets>
-        <label><!-- specialfieldset --></label>
-        <name>specialfieldsetname</name>
-    </fieldSets>
-    <layouts>
-        <layout>testlayout</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
+    
+    
+    
     <layouts>
         <layout>amazinglayout-wow</layout>
         <sections>
@@ -37,13 +25,7 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <layouts>
-        <layout>newlayoutoooo</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
+    
     <quickActions>
         <label><!-- Reply --></label>
         <name>EmailSend</name>
@@ -57,24 +39,9 @@
         <label><!-- NewTest --></label>
         <name>NewTestName</name>
     </recordTypes>
-    <recordTypes>
-        <label><!-- newrecordtype --></label>
-        <name>newrecordtypename</name>
-    </recordTypes>
-    <validationRules>
-        <errorMessage><!-- Test error --></errorMessage>
-        <name>validationruletest</name>
-    </validationRules>
-    <validationRules>
-        <errorMessage><!-- very bad thing --></errorMessage>
-        <name>newValidRule</name>
-    </validationRules>
-    <webLinks>
-        <label><!-- buttonname --></label>
-        <name>buttonname</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- weblinkbuttontestname --></label>
-        <name>weblinkbuttontestname</name>
-    </webLinks>
+    
+    
+    
+    
+    
 </CustomObjectTranslation>
