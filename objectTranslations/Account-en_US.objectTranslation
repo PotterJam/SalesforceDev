@@ -187,6 +187,10 @@
         <name>rating_account</name>
         <startsWith>Consonant</startsWith>
     </fields>
+    <quickActions>
+        <label><!-- Log a Call --></label>
+        <name>testlbl</name>
+    </quickActions>
     <recordTypes>
         <label><!-- abc --></label>
         <name>abc</name>
