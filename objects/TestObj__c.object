@@ -70,28 +70,4 @@
     <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
-    <fieldSets>
-        <fullName>fieldsettestname</fullName>
-        <description>for testing</description>
-        <label>fieldsettest</label>
-    </fieldSets>
-    <webLinks>
-        <fullName>buttonname</fullName>
-        <availability>online</availability>
-        <displayType>link</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
-        <masterLabel>button</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
-        <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-        <url>{!TestObj__c.CreatedById}</url>
-    </webLinks>
 </CustomObject>
