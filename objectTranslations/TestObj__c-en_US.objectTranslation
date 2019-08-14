@@ -21,6 +21,10 @@
         <label><!-- NewTest --></label>
         <name>NewTestName</name>
     </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Test error --></errorMessage>
+        <name>validationruletest</name>
+    </validationRules>
     <webLinks>
         <label><!-- buttonname --></label>
         <name>buttonname</name>
