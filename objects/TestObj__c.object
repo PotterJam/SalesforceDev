@@ -76,4 +76,10 @@
     <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
+    <recordTypes>
+        <fullName>NewTestName</fullName>
+        <active>true</active>
+        <description>Less amazing</description>
+        <label>NewTest</label>
+    </recordTypes>
 </CustomObject>
