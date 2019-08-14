@@ -12,6 +12,13 @@
         <label><!-- fieldsettest --></label>
         <name>fieldsettestname</name>
     </fieldSets>
+    <layouts>
+        <layout>testlayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <quickActions>
         <label><!-- Reply --></label>
         <name>EmailSend</name>
