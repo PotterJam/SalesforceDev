@@ -10,13 +10,7 @@
         <value>TestObjs</value>
     </caseValues>
     <startsWith>Consonant</startsWith>
-    <layouts>
-        <layout>amazinglayout-wow</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
+    
     <layouts>
         <layout>layout (test) ok</layout>
         <sections>
