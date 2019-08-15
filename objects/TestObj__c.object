@@ -55,6 +55,23 @@
         <fields>Name</fields>
         <label>compactlayouttest</label>
     </compactLayouts>
+    <fields>
+        <fullName>newcur__c</fullName>
+        <externalId>false</externalId>
+        <label>newcur</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>newfield__c</fullName>
+        <externalId>false</externalId>
+        <label>newfield</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
