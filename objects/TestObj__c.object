@@ -76,10 +76,45 @@
     <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
+    <fieldSets>
+        <fullName>testfieldsetname</fullName>
+        <description>testing</description>
+        <label>testfieldset</label>
+    </fieldSets>
     <recordTypes>
         <fullName>NewTestName</fullName>
         <active>true</active>
         <description>Less amazing</description>
         <label>NewTest</label>
     </recordTypes>
+    <recordTypes>
+        <fullName>amazingtestname</fullName>
+        <active>false</active>
+        <label>amazingtest</label>
+    </recordTypes>
+    <validationRules>
+        <fullName>newValidRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>BEGINS($Profile.Description, LastModifiedBy.City)</errorConditionFormula>
+        <errorMessage>abc</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>weblinktestname</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>weblinktest</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>{!MessagingEndUser.CreatedDate}</url>
+    </webLinks>
 </CustomObject>
