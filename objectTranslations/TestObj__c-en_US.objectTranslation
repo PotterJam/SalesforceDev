@@ -21,10 +21,17 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
+<<<<<<< HEAD
+    <quickActions>
+        <label><!-- Reply --></label>
+        <name>EmailExplode</name>
+    </quickActions>
+=======
     <quickActions>
         <label><!-- Reply --></label>
         <name>EmailSend</name>
     </quickActions>
+>>>>>>> branch-ANOTHER
     <quickActions>
         <label><!-- New Child Note --></label>
         <name>something_abc</name>
