@@ -5,15 +5,11 @@
         <plural>false</plural>
         <value>TestObj</value>
     </caseValues>
-<<<<<<< HEAD
-=======
     <caseValues>
         <plural>true</plural>
         <value>TestObjs</value>
     </caseValues>
     <startsWith>Consonant</startsWith>
->>>>>>> branch-a
-
     <layouts>
         <layout>layout (test) ok</layout>
         <sections>
