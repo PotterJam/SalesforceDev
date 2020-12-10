@@ -184,7 +184,7 @@
     </fields>
     <fields>
         <fullName>ActivatedDate</fullName>
-        
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
@@ -194,12 +194,12 @@
     </fields>
     <fields>
         <fullName>CompanySignedDate</fullName>
-        
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>CompanySignedId</fullName>
-        
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
@@ -210,7 +210,7 @@
     </fields>
     <fields>
         <fullName>CustomerSignedDate</fullName>
-        
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
@@ -231,7 +231,7 @@
     </fields>
     <fields>
         <fullName>EndDate</fullName>
-        
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
@@ -246,7 +246,7 @@
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
-        
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
@@ -268,12 +268,12 @@
     </fields>
     <fields>
         <fullName>StartDate</fullName>
-        
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>Status</fullName>
-        
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
