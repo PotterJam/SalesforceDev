@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
@@ -127,6 +128,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ReadSelect</externalSharingModel>
     <fields>
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
@@ -143,6 +145,15 @@
         <fullName>Name</fullName>
         <trackHistory>false</trackHistory>
     </fields>
+    <listViews>
+        <fullName>All_Price_Books</fullName>
+        <columns>PRICEBOOK2.NAME</columns>
+        <columns>PRICEBOOK2.DESCRIPTION</columns>
+        <columns>PRICEBOOK2.LAST_UPDATE</columns>
+        <columns>PRICEBOOK2.IS_ACTIVE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Price Books</label>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>PRICEBOOK2.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>PRICEBOOK2.DESCRIPTION</customTabListAdditionalFields>

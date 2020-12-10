@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ForecastingSettings xmlns="http://soap.sforce.com/2006/04/metadata">
-    <enableForecasts>false</enableForecasts>
+    <defaultToPersonalCurrency>false</defaultToPersonalCurrency>
+    <enableForecasts>true</enableForecasts>
     <forecastingCategoryMappings>
         <forecastingItemCategoryApiName>commitonly</forecastingItemCategoryApiName>
         <weightedSourceCategories>
@@ -80,13 +81,13 @@
     <forecastingTypeSettings>
         <active>true</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -94,13 +95,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>OpportunityCloseDate</forecastingDateType>
         <hasProductFamily>false</hasProductFamily>
         <isAmount>true</isAmount>
         <isAvailable>true</isAvailable>
         <isQuantity>false</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Opportunities</masterLabel>
         <name>OpportunityRevenue</name>
         <opportunityListFieldsLabelMappings>
@@ -192,6 +198,10 @@
             <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
             <label>Closed</label>
         </opportunityListFieldsLabelMappings>
@@ -228,32 +238,20 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Partner Account</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -280,6 +278,7 @@
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -289,14 +288,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>
@@ -304,13 +302,13 @@
     <forecastingTypeSettings>
         <active>false</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -318,13 +316,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>OpportunityCloseDate</forecastingDateType>
         <hasProductFamily>false</hasProductFamily>
         <isAmount>false</isAmount>
         <isAvailable>true</isAvailable>
         <isQuantity>true</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Opportunities</masterLabel>
         <name>OpportunityQuantity</name>
         <opportunityListFieldsLabelMappings>
@@ -416,6 +419,10 @@
             <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
             <label>Closed</label>
         </opportunityListFieldsLabelMappings>
@@ -452,32 +459,20 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Partner Account</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -504,6 +499,7 @@
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -513,14 +509,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>
@@ -528,13 +523,13 @@
     <forecastingTypeSettings>
         <active>false</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -542,13 +537,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>OpportunityCloseDate</forecastingDateType>
         <hasProductFamily>true</hasProductFamily>
         <isAmount>true</isAmount>
         <isAvailable>true</isAvailable>
         <isQuantity>false</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Product Families</masterLabel>
         <name>OpportunityLineItemRevenue</name>
         <opportunityListFieldsLabelMappings>
@@ -644,6 +644,10 @@
             <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
             <label>Closed</label>
         </opportunityListFieldsLabelMappings>
@@ -680,32 +684,20 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Partner Account</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -733,6 +725,7 @@
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -742,14 +735,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>
@@ -757,13 +749,13 @@
     <forecastingTypeSettings>
         <active>false</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -771,13 +763,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>OpportunityCloseDate</forecastingDateType>
         <hasProductFamily>true</hasProductFamily>
         <isAmount>false</isAmount>
         <isAvailable>true</isAvailable>
         <isQuantity>true</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Product Families</masterLabel>
         <name>OpportunityLineItemQuantity</name>
         <opportunityListFieldsLabelMappings>
@@ -869,6 +866,10 @@
             <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
             <label>Closed</label>
         </opportunityListFieldsLabelMappings>
@@ -905,32 +906,20 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Partner Account</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -957,6 +946,7 @@
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -966,14 +956,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>
@@ -981,13 +970,13 @@
     <forecastingTypeSettings>
         <active>false</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -995,13 +984,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>ProductDate</forecastingDateType>
         <hasProductFamily>false</hasProductFamily>
         <isAmount>true</isAmount>
         <isAvailable>true</isAvailable>
         <isQuantity>false</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Opportunity Revenue Product Date</masterLabel>
         <name>OpportunityRevenueProductDate</name>
         <opportunityListFieldsLabelMappings>
@@ -1097,6 +1091,10 @@
             <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
             <label>Closed</label>
         </opportunityListFieldsLabelMappings>
@@ -1133,32 +1131,20 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Partner Account</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1186,6 +1172,7 @@
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -1195,14 +1182,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>
@@ -1210,13 +1196,13 @@
     <forecastingTypeSettings>
         <active>false</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -1224,13 +1210,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>ProductDate</forecastingDateType>
         <hasProductFamily>false</hasProductFamily>
         <isAmount>false</isAmount>
         <isAvailable>true</isAvailable>
         <isQuantity>true</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Opportunity Quantity Product Date</masterLabel>
         <name>OpportunityQuantityProductDate</name>
         <opportunityListFieldsLabelMappings>
@@ -1322,6 +1313,10 @@
             <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
             <label>Closed</label>
         </opportunityListFieldsLabelMappings>
@@ -1358,32 +1353,20 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Partner Account</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1410,6 +1393,7 @@
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -1419,14 +1403,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>
@@ -1434,13 +1417,13 @@
     <forecastingTypeSettings>
         <active>false</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -1448,13 +1431,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>ProductDate</forecastingDateType>
         <hasProductFamily>true</hasProductFamily>
         <isAmount>true</isAmount>
-        <isAvailable>false</isAvailable>
+        <isAvailable>true</isAvailable>
         <isQuantity>false</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Line Item Revenue Product Date</masterLabel>
         <name>LineItemRevenueProductDate</name>
         <opportunityListFieldsLabelMappings>
@@ -1466,8 +1454,8 @@
             <label>Account Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>OPPORTUNITY.AMOUNT</field>
-            <label>Amount</label>
+            <field>SPLITAMOUNT</field>
+            <label>Forecasted Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
@@ -1498,16 +1486,20 @@
             <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>First Name</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Last Name</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
@@ -1539,11 +1531,15 @@
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Alias</label>
+            <label>Created By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -1582,37 +1578,25 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Account Name</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
             <field>ACCOUNT.NAME</field>
-            <field>OPPORTUNITY.AMOUNT</field>
+            <field>SPLITAMOUNT</field>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <field>OPPORTUNITY.STAGE_NAME</field>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -1622,6 +1606,7 @@
         <opportunityListFieldsUnselectedSettings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <field>CONTRACT.NAME</field>
+            <field>OPPORTUNITY.AMOUNT</field>
             <field>CORE.USERS.ALIAS</field>
             <field>CORE.USERS.FIRST_NAME</field>
             <field>CORE.USERS.LAST_NAME</field>
@@ -1634,6 +1619,7 @@
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -1643,14 +1629,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>
@@ -1658,13 +1643,13 @@
     <forecastingTypeSettings>
         <active>false</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -1672,13 +1657,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>ProductDate</forecastingDateType>
         <hasProductFamily>true</hasProductFamily>
         <isAmount>false</isAmount>
-        <isAvailable>false</isAvailable>
+        <isAvailable>true</isAvailable>
         <isQuantity>true</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Line Item Quantity Product Date</masterLabel>
         <name>LineItemQuantityProductDate</name>
         <opportunityListFieldsLabelMappings>
@@ -1690,8 +1680,8 @@
             <label>Account Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>OPPORTUNITY.AMOUNT</field>
-            <label>Amount</label>
+            <field>OPPORTUNITY.QUANTITY</field>
+            <label>Quantity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
@@ -1722,16 +1712,20 @@
             <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>First Name</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Last Name</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
@@ -1754,20 +1748,20 @@
             <label>Private</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>OPPORTUNITY.QUANTITY</field>
-            <label>Quantity</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
             <label>Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Alias</label>
+            <label>Created By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -1806,37 +1800,25 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Account Name</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
             <field>ACCOUNT.NAME</field>
-            <field>OPPORTUNITY.AMOUNT</field>
+            <field>OPPORTUNITY.QUANTITY</field>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <field>OPPORTUNITY.STAGE_NAME</field>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -1846,6 +1828,7 @@
         <opportunityListFieldsUnselectedSettings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <field>CONTRACT.NAME</field>
+            <field>OPPORTUNITY.AMOUNT</field>
             <field>CORE.USERS.ALIAS</field>
             <field>CORE.USERS.FIRST_NAME</field>
             <field>CORE.USERS.LAST_NAME</field>
@@ -1854,10 +1837,10 @@
             <field>OPPORTUNITY.LEAD_SOURCE</field>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <field>OPPORTUNITY.PRIVATE</field>
-            <field>OPPORTUNITY.QUANTITY</field>
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -1867,14 +1850,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>
@@ -1882,13 +1864,13 @@
     <forecastingTypeSettings>
         <active>false</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -1896,13 +1878,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>ScheduleDate</forecastingDateType>
         <hasProductFamily>false</hasProductFamily>
         <isAmount>true</isAmount>
         <isAvailable>true</isAvailable>
         <isQuantity>false</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Opportunity Revenue Schedule Date</masterLabel>
         <name>OpportunityRevenueScheduleDate</name>
         <opportunityListFieldsLabelMappings>
@@ -1998,6 +1985,10 @@
             <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
             <label>Closed</label>
         </opportunityListFieldsLabelMappings>
@@ -2034,32 +2025,20 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Partner Account</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -2087,6 +2066,7 @@
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -2096,14 +2076,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>
@@ -2111,13 +2090,13 @@
     <forecastingTypeSettings>
         <active>false</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -2125,13 +2104,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>ScheduleDate</forecastingDateType>
         <hasProductFamily>false</hasProductFamily>
         <isAmount>false</isAmount>
         <isAvailable>true</isAvailable>
         <isQuantity>true</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Opportunity Quantity Schedule Date</masterLabel>
         <name>OpportunityQuantityScheduleDate</name>
         <opportunityListFieldsLabelMappings>
@@ -2223,6 +2207,10 @@
             <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
             <label>Closed</label>
         </opportunityListFieldsLabelMappings>
@@ -2259,32 +2247,20 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Partner Account</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -2311,6 +2287,7 @@
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -2320,14 +2297,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>
@@ -2335,13 +2311,13 @@
     <forecastingTypeSettings>
         <active>false</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -2349,13 +2325,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>ScheduleDate</forecastingDateType>
         <hasProductFamily>true</hasProductFamily>
         <isAmount>true</isAmount>
-        <isAvailable>false</isAvailable>
+        <isAvailable>true</isAvailable>
         <isQuantity>false</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Line Item Revenue Schedule Date</masterLabel>
         <name>LineItemRevenueScheduleDate</name>
         <opportunityListFieldsLabelMappings>
@@ -2367,8 +2348,8 @@
             <label>Account Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>OPPORTUNITY.AMOUNT</field>
-            <label>Amount</label>
+            <field>SPLITAMOUNT</field>
+            <label>Forecasted Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
@@ -2399,16 +2380,20 @@
             <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>First Name</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Last Name</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
@@ -2440,11 +2425,15 @@
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Alias</label>
+            <label>Created By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -2483,37 +2472,25 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Account Name</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
             <field>ACCOUNT.NAME</field>
-            <field>OPPORTUNITY.AMOUNT</field>
+            <field>SPLITAMOUNT</field>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <field>OPPORTUNITY.STAGE_NAME</field>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -2523,6 +2500,7 @@
         <opportunityListFieldsUnselectedSettings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <field>CONTRACT.NAME</field>
+            <field>OPPORTUNITY.AMOUNT</field>
             <field>CORE.USERS.ALIAS</field>
             <field>CORE.USERS.FIRST_NAME</field>
             <field>CORE.USERS.LAST_NAME</field>
@@ -2535,6 +2513,7 @@
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -2544,14 +2523,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>
@@ -2559,13 +2537,13 @@
     <forecastingTypeSettings>
         <active>false</active>
         <adjustmentsSettings>
-            <enableAdjustments>false</enableAdjustments>
-            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+            <enableAdjustments>true</enableAdjustments>
+            <enableOwnerAdjustments>true</enableOwnerAdjustments>
         </adjustmentsSettings>
         <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
-        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseforecast</displayedCategoryApiNames>
+        <displayedCategoryApiNames>openpipeline</displayedCategoryApiNames>
         <forecastRangeSettings>
             <beginning>0</beginning>
             <displaying>6</displaying>
@@ -2573,13 +2551,18 @@
         </forecastRangeSettings>
         <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>openpipeline</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>commitforecast</forecastedCategoryApiNames>
         <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
         <forecastingDateType>ScheduleDate</forecastingDateType>
         <hasProductFamily>true</hasProductFamily>
         <isAmount>false</isAmount>
-        <isAvailable>false</isAvailable>
+        <isAvailable>true</isAvailable>
         <isQuantity>true</isQuantity>
+        <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
+        <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
         <masterLabel>Line Item Quantity Schedule Date</masterLabel>
         <name>LineItemQuantityScheduleDate</name>
         <opportunityListFieldsLabelMappings>
@@ -2591,8 +2574,8 @@
             <label>Account Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>OPPORTUNITY.AMOUNT</field>
-            <label>Amount</label>
+            <field>OPPORTUNITY.QUANTITY</field>
+            <label>Quantity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
@@ -2623,16 +2606,20 @@
             <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>First Name</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Last Name</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
@@ -2655,20 +2642,20 @@
             <label>Private</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>OPPORTUNITY.QUANTITY</field>
-            <label>Quantity</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
             <label>Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Alias</label>
+            <label>Created By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>SYNCEDQUOTE.NAME</field>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -2707,37 +2694,25 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000Bqy6u</field>
-            <label>Close Reason</label>
+            <field>00N3z00000ATnhj</field>
+            <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIA</field>
-            <label>Current Generator(s)</label>
+            <field>00N3z00000ATnhk</field>
+            <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIB</field>
-            <label>Delivery/Installation Status</label>
+            <field>00N3z00000ATnhm</field>
+            <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIC</field>
-            <label>Main Competitor(s)</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgID</field>
-            <label>Order Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N4J00000BqgIE</field>
-            <label>Tracking Number</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>PARTNER.NAME</field>
-            <label>Account Name</label>
+            <field>00N3z00000ATnhl</field>
+            <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
             <field>ACCOUNT.NAME</field>
-            <field>OPPORTUNITY.AMOUNT</field>
+            <field>OPPORTUNITY.QUANTITY</field>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <field>OPPORTUNITY.STAGE_NAME</field>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -2747,6 +2722,7 @@
         <opportunityListFieldsUnselectedSettings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <field>CONTRACT.NAME</field>
+            <field>OPPORTUNITY.AMOUNT</field>
             <field>CORE.USERS.ALIAS</field>
             <field>CORE.USERS.FIRST_NAME</field>
             <field>CORE.USERS.LAST_NAME</field>
@@ -2755,10 +2731,10 @@
             <field>OPPORTUNITY.LEAD_SOURCE</field>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <field>OPPORTUNITY.PRIVATE</field>
-            <field>OPPORTUNITY.QUANTITY</field>
             <field>OPPORTUNITY.TYPE</field>
             <field>UPDATEDBY_USER.ALIAS</field>
             <field>CREATEDBY_USER.ALIAS</field>
+            <field>SYNCEDQUOTE.NAME</field>
             <field>OPPORTUNITY.CLOSED</field>
             <field>OPPORTUNITY.WON</field>
             <field>ACCOUNT.SITE</field>
@@ -2768,14 +2744,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N4J00000Bqy6u</field>
-            <field>00N4J00000BqgIA</field>
-            <field>00N4J00000BqgIB</field>
-            <field>00N4J00000BqgIC</field>
-            <field>00N4J00000BqgID</field>
-            <field>00N4J00000BqgIE</field>
-            <field>PARTNER.NAME</field>
+            <field>00N3z00000ATnhj</field>
+            <field>00N3z00000ATnhk</field>
+            <field>00N3z00000ATnhm</field>
+            <field>00N3z00000ATnhl</field>
         </opportunityListFieldsUnselectedSettings>
+        <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
+        <ownerAdjustableCategoryApiNames>commitforecast</ownerAdjustableCategoryApiNames>
         <quotasSettings>
             <showQuotas>false</showQuotas>
         </quotasSettings>

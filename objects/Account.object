@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>CallHighlightAction</actionName>
         <type>Default</type>
@@ -183,15 +184,18 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>Account_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
@@ -223,9 +227,11 @@
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>Account_Compact_Layout</compactLayoutAssignment>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>AccountNumber</fullName>
         <trackFeedHistory>false</trackFeedHistory>
@@ -236,29 +242,6 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>Active__c</fullName>
-        <externalId>false</externalId>
-        <label>Active</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
-                    <label>No</label>
-                </value>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                    <label>Yes</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>AnnualRevenue</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -267,77 +250,12 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
-        <fullName>CleanStatus</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>CustomerPriority__c</fullName>
-        <externalId>false</externalId>
-        <label>Customer Priority</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>High</fullName>
-                    <default>false</default>
-                    <label>High</label>
-                </value>
-                <value>
-                    <fullName>Low</fullName>
-                    <default>false</default>
-                    <label>Low</label>
-                </value>
-                <value>
-                    <fullName>Medium</fullName>
-                    <default>false</default>
-                    <label>Medium</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>DandbCompanyId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Description</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>DunsNumber</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>Field__c</fullName>
-        <description>Customer’s geographical region—for sales operations use only.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>In which region is the customer based?</inlineHelpText>
-        <label>Region</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetName>Region</valueSetName>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Has_Support_Plan__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>Sales users use this field to indicate to Support which customers have support plans.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Does this customer have a current support plan? Check this box when you sell a support plan to this customer.</inlineHelpText>
-        <label>Has Support Plan</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Industry</fullName>
@@ -349,31 +267,12 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
-        <fullName>NaicsCode</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>NaicsDesc</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>true</trackFeedHistory>
     </fields>
     <fields>
         <fullName>NumberOfEmployees</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>NumberofLocations__c</fullName>
-        <externalId>false</externalId>
-        <label>Number of Locations</label>
-        <precision>3</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
@@ -400,57 +299,6 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>SLAExpirationDate__c</fullName>
-        <externalId>false</externalId>
-        <label>SLA Expiration Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>SLASerialNumber__c</fullName>
-        <externalId>false</externalId>
-        <label>SLA Serial Number</label>
-        <length>10</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>SLA__c</fullName>
-        <externalId>false</externalId>
-        <label>SLA</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Gold</fullName>
-                    <default>false</default>
-                    <label>Gold</label>
-                </value>
-                <value>
-                    <fullName>Silver</fullName>
-                    <default>false</default>
-                    <label>Silver</label>
-                </value>
-                <value>
-                    <fullName>Platinum</fullName>
-                    <default>false</default>
-                    <label>Platinum</label>
-                </value>
-                <value>
-                    <fullName>Bronze</fullName>
-                    <default>false</default>
-                    <label>Bronze</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>ShippingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -467,29 +315,7 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
-        <fullName>Support_Plan_Expiration_Date__c</fullName>
-        <description>Expiration date of current support plan</description>
-        <externalId>false</externalId>
-        <inlineHelpText>When is the current support plan due for renewal?</inlineHelpText>
-        <label>Support Plan Expiration Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>TickerSymbol</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>TimeTest__c</fullName>
-        <externalId>false</externalId>
-        <label>TimeTest</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Tradestyle</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
@@ -498,277 +324,41 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>UpsellOpportunity__c</fullName>
-        <externalId>false</externalId>
-        <label>Upsell Opportunity</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Maybe</fullName>
-                    <default>false</default>
-                    <label>Maybe</label>
-                </value>
-                <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
-                    <label>No</label>
-                </value>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                    <label>Yes</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
-        <fullName>YearStarted</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>Zone__c</fullName>
-        <description>Customer’s zone within the selected region—for sales operations use only.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>In which zone is this customer based? Depends on region.</inlineHelpText>
-        <label>Zone</label>
+        <fullName>ext_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>ext_Id</label>
+        <length>10</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <controllingField>Field__c</controllingField>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>East Asia</fullName>
-                    <default>false</default>
-                    <label>East Asia</label>
-                </value>
-                <value>
-                    <fullName>Oceania</fullName>
-                    <default>false</default>
-                    <label>Oceania</label>
-                </value>
-                <value>
-                    <fullName>Southeast Asia</fullName>
-                    <default>false</default>
-                    <label>Southeast Asia</label>
-                </value>
-                <value>
-                    <fullName>Africa</fullName>
-                    <default>false</default>
-                    <label>Africa</label>
-                </value>
-                <value>
-                    <fullName>Europe</fullName>
-                    <default>false</default>
-                    <label>Europe</label>
-                </value>
-                <value>
-                    <fullName>Middle East</fullName>
-                    <default>false</default>
-                    <label>Middle East</label>
-                </value>
-                <value>
-                    <fullName>UK + Ireland</fullName>
-                    <default>false</default>
-                    <label>UK + Ireland</label>
-                </value>
-                <value>
-                    <fullName>Caribbean</fullName>
-                    <default>false</default>
-                    <label>Caribbean</label>
-                </value>
-                <value>
-                    <fullName>Central America</fullName>
-                    <default>false</default>
-                    <label>Central America</label>
-                </value>
-                <value>
-                    <fullName>South America</fullName>
-                    <default>false</default>
-                    <label>South America</label>
-                </value>
-                <value>
-                    <fullName>Midwest US</fullName>
-                    <default>false</default>
-                    <label>Midwest US</label>
-                </value>
-                <value>
-                    <fullName>Northeast US</fullName>
-                    <default>false</default>
-                    <label>Northeast US</label>
-                </value>
-                <value>
-                    <fullName>Southeast US</fullName>
-                    <default>false</default>
-                    <label>Southeast US</label>
-                </value>
-                <value>
-                    <fullName>Southwest US</fullName>
-                    <default>false</default>
-                    <label>Southwest US</label>
-                </value>
-                <value>
-                    <fullName>West US</fullName>
-                    <default>false</default>
-                    <label>West US</label>
-                </value>
-                <value>
-                    <fullName>Northern Canada</fullName>
-                    <default>false</default>
-                    <label>Northern Canada</label>
-                </value>
-                <value>
-                    <fullName>Mountains and the West</fullName>
-                    <default>false</default>
-                    <label>Mountains and the West</label>
-                </value>
-                <value>
-                    <fullName>The Prairies</fullName>
-                    <default>false</default>
-                    <label>The Prairies</label>
-                </value>
-                <value>
-                    <fullName>Central Canada</fullName>
-                    <default>false</default>
-                    <label>Central Canada</label>
-                </value>
-                <value>
-                    <fullName>East Coast</fullName>
-                    <default>false</default>
-                    <label>East Coast</label>
-                </value>
-            </valueSetDefinition>
-            <valueSettings>
-                <controllingFieldValue>APAC</controllingFieldValue>
-                <valueName>East Asia</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>APAC</controllingFieldValue>
-                <valueName>Oceania</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>APAC</controllingFieldValue>
-                <valueName>Southeast Asia</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>EMEA</controllingFieldValue>
-                <valueName>Africa</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>EMEA</controllingFieldValue>
-                <valueName>Europe</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>EMEA</controllingFieldValue>
-                <valueName>Middle East</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>EMEA</controllingFieldValue>
-                <valueName>UK + Ireland</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>LATAM</controllingFieldValue>
-                <valueName>Caribbean</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>LATAM</controllingFieldValue>
-                <valueName>Central America</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>LATAM</controllingFieldValue>
-                <valueName>South America</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>US</controllingFieldValue>
-                <valueName>Midwest US</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>US</controllingFieldValue>
-                <valueName>Northeast US</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>US</controllingFieldValue>
-                <valueName>Southeast US</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>US</controllingFieldValue>
-                <valueName>Southwest US</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>US</controllingFieldValue>
-                <valueName>West US</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <valueName>Northern Canada</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <valueName>Mountains and the West</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <valueName>The Prairies</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <valueName>Central Canada</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <valueName>East Coast</valueName>
-            </valueSettings>
-        </valueSet>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
         <label>All Accounts</label>
     </listViews>
     <listViews>
         <fullName>MyAccounts</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS2_STREET</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_STATE</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>ACCOUNT.ADDRESS2_ZIP</columns>
+        <columns>ACCOUNT.PHONE1</columns>
         <filterScope>Mine</filterScope>
         <label>My Accounts</label>
-    </listViews>
-    <listViews>
-        <fullName>NewLastWeek</fullName>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>ACCOUNT.CREATED_DATE</field>
-            <operation>equals</operation>
-            <value>LAST_WEEK</value>
-        </filters>
-        <label>New Last Week</label>
-    </listViews>
-    <listViews>
-        <fullName>NewThisWeek</fullName>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>ACCOUNT.CREATED_DATE</field>
-            <operation>equals</operation>
-            <value>THIS_WEEK</value>
-        </filters>
-        <label>New This Week</label>
-    </listViews>
-    <listViews>
-        <fullName>PlatinumandGoldSLACustomers</fullName>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>ACCOUNT.SITE</columns>
-        <columns>ACCOUNT.ADDRESS1_STATE</columns>
-        <columns>ACCOUNT.PHONE1</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <filterScope>Everything</filterScope>
-        <label>Platinum and Gold SLA Customers</label>
     </listViews>
     <recordTypes>
         <fullName>abc</fullName>
@@ -1169,37 +759,81 @@
         <customTabListAdditionalFields>ACCOUNT.ADDRESS1_CITY</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.PHONE1</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>ACCOUNT.SITE</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CORE.USERS.ALIAS</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.TYPE</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>ACCOUNT.SITE</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>CORE.USERS.ALIAS</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ACCOUNT.TYPE</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ACCOUNT.PHONE1</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ACCOUNT.SITE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ACCOUNT.PHONE1</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <webLinks>
-        <fullName>Billing</fullName>
+        <fullName>GoogleMaps</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
         <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>true</hasMenubar>
+        <hasMenubar>false</hasMenubar>
         <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>true</hasToolbar>
+        <hasToolbar>false</hasToolbar>
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Billing</masterLabel>
+        <masterLabel>Google Maps</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
-        <showsLocation>true</showsLocation>
-        <showsStatus>true</showsStatus>
-        <url>http://www.genwatt.com/genwatt/billing.htm?actname={!Account_Name}</url>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Account_BillingStreet}+{!Account_BillingCity}+{!Account_BillingState}&amp;om=1</url>
     </webLinks>
+    <webLinks>
+        <fullName>GoogleNews</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google News</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/news?&amp;q={!Account_Name}&amp;btnG=Search+News</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleSearch</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Search</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/search?q={!Account_Name}</url>
+    </webLinks>
+    <compactLayouts>
+        <fullName>Account_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Phone</fields>
+        <fields>BillingAddress</fields>
+        <fields>Website</fields>
+        <fields>OwnerId</fields>
+        <label>Account Compact Layout</label>
+    </compactLayouts>
 </CustomObject>

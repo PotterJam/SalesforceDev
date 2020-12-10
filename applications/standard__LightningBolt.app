@@ -7,4 +7,5 @@
     <navType>Standard</navType>
     <tabs>standard-LightningBoltHome</tabs>
     <uiType>Lightning</uiType>
+    <utilityBar>LightningBolt_UtilityBar</utilityBar>
 </CustomApplication>
