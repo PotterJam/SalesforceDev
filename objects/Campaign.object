@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>AddCampaign</actionName>
         <type>Default</type>
@@ -269,13 +268,6 @@
     </fields>
     <listViews>
         <fullName>AllActiveCampaigns</fullName>
-        <columns>CAMPAIGN.NAME</columns>
-        <columns>CAMPAIGN.START_DATE</columns>
-        <columns>CAMPAIGN.END_DATE</columns>
-        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
-        <columns>CAMPAIGN.STATUS</columns>
-        <columns>CORE.USERS.FIRST_NAME</columns>
-        <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>CAMPAIGN.ACTIVE</field>
@@ -286,11 +278,6 @@
     </listViews>
     <listViews>
         <fullName>MyActiveCampaigns</fullName>
-        <columns>CAMPAIGN.NAME</columns>
-        <columns>CAMPAIGN.START_DATE</columns>
-        <columns>CAMPAIGN.END_DATE</columns>
-        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
-        <columns>CAMPAIGN.STATUS</columns>
         <filterScope>Mine</filterScope>
         <filters>
             <field>CAMPAIGN.ACTIVE</field>

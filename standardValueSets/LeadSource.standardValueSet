@@ -2,34 +2,19 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Advertisement</fullName>
+        <fullName>Web</fullName>
         <default>false</default>
-        <label>Advertisement</label>
+        <label>Web</label>
     </standardValue>
     <standardValue>
-        <fullName>Customer Event</fullName>
+        <fullName>Phone Inquiry</fullName>
         <default>false</default>
-        <label>Customer Event</label>
+        <label>Phone Inquiry</label>
     </standardValue>
     <standardValue>
-        <fullName>Employee Referral</fullName>
+        <fullName>Partner Referral</fullName>
         <default>false</default>
-        <label>Employee Referral</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Google AdWords</fullName>
-        <default>false</default>
-        <label>Google AdWords</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Other</fullName>
-        <default>false</default>
-        <label>Other</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Partner</fullName>
-        <default>false</default>
-        <label>Partner</label>
+        <label>Partner Referral</label>
     </standardValue>
     <standardValue>
         <fullName>Purchased List</fullName>
@@ -37,18 +22,8 @@
         <label>Purchased List</label>
     </standardValue>
     <standardValue>
-        <fullName>Trade Show</fullName>
+        <fullName>Other</fullName>
         <default>false</default>
-        <label>Trade Show</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Webinar</fullName>
-        <default>false</default>
-        <label>Webinar</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Website</fullName>
-        <default>false</default>
-        <label>Website</label>
+        <label>Other</label>
     </standardValue>
 </StandardValueSet>

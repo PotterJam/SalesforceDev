@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
@@ -114,14 +113,12 @@
     </actionOverrides>
     <enableFeeds>false</enableFeeds>
     <listViews>
+        <fullName>AllActivities</fullName>
+        <filterScope>Team</filterScope>
+        <label>All Activities</label>
+    </listViews>
+    <listViews>
         <fullName>MyActivities</fullName>
-        <columns>ACTIVITY_SUBTYPE</columns>
-        <columns>TASK.STATUS</columns>
-        <columns>TASK.SUBJECT</columns>
-        <columns>TASK.DUE_DATE</columns>
-        <columns>TASK.WHAT_NAME</columns>
-        <columns>TASK.WHO_NAME</columns>
-        <columns>EVENT.LOCATION</columns>
         <filterScope>Mine</filterScope>
         <label>My Activities</label>
     </listViews>
@@ -133,27 +130,27 @@
     <listViews>
         <fullName>MyTeamsActivities</fullName>
         <filterScope>Team</filterScope>
-        <label>My Team&#39;s Activities</label>
+        <label>My Team's Activities</label>
     </listViews>
     <listViews>
         <fullName>TodaysTasks</fullName>
         <filterScope>Mine</filterScope>
-        <filters>
-            <field>TASK.CLOSED</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
         <filters>
             <field>ACTIVITY.TASK</field>
             <operation>equals</operation>
             <value>1</value>
         </filters>
         <filters>
+            <field>TASK.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
             <field>TASK.DUE_DATE</field>
             <operation>lessThan</operation>
             <value>TOMORROW</value>
         </filters>
-        <label>Today&#39;s Tasks</label>
+        <label>Today's Tasks</label>
     </listViews>
     <listViews>
         <fullName>UpcomingEvents</fullName>
