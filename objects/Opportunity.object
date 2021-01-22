@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>AddInfluence</actionName>
         <type>Default</type>
@@ -154,15 +155,6 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
-        <fullName>Budget_Confirmed__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>Budget Confirmed</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>CampaignId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
@@ -225,15 +217,6 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
-        <fullName>Discovery_Completed__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>Discovery Completed</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>ExpectedRevenue</fullName>
         <trackTrending>false</trackTrending>
     </fields>
@@ -251,45 +234,6 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>Loss_Reason__c</fullName>
-        <externalId>false</externalId>
-        <label>Loss Reason</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Lost to Competitor</fullName>
-                    <default>false</default>
-                    <label>Lost to Competitor</label>
-                </value>
-                <value>
-                    <fullName>No Budget / Lost Funding</fullName>
-                    <default>false</default>
-                    <label>No Budget / Lost Funding</label>
-                </value>
-                <value>
-                    <fullName>No Decision / Non-Responsive</fullName>
-                    <default>false</default>
-                    <label>No Decision / Non-Responsive</label>
-                </value>
-                <value>
-                    <fullName>Price</fullName>
-                    <default>false</default>
-                    <label>Price</label>
-                </value>
-                <value>
-                    <fullName>Other</fullName>
-                    <default>false</default>
-                    <label>Other</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
     </fields>
     <fields>
         <fullName>MainCompetitors__c</fullName>
@@ -340,25 +284,10 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
-        <fullName>ROI_Analysis_Completed__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>ROI Analysis Completed</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>StageName</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>SyncedQuoteId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>TotalOpportunityQuantity</fullName>
@@ -428,17 +357,6 @@
         <label>Opportunity Pipeline</label>
     </listViews>
     <listViews>
-        <fullName>Kanban</fullName>
-        <columns>OPPORTUNITY.NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>OPPORTUNITY.STAGE_NAME</columns>
-        <columns>OPPORTUNITY.CLOSE_DATE</columns>
-        <columns>OPPORTUNITY.AMOUNT</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <filterScope>Mine</filterScope>
-        <label>Kanban</label>
-    </listViews>
-    <listViews>
         <fullName>MyOpportunities</fullName>
         <filterScope>Mine</filterScope>
         <label>My Opportunities</label>
@@ -488,15 +406,6 @@
         </filters>
         <label>Won</label>
     </listViews>
-    <compactLayouts>
-        <fullName>New_Awesome_Companct_Layout</fullName>
-        <fields>Name</fields>
-        <fields>AccountId</fields>
-        <fields>CloseDate</fields>
-        <fields>Amount</fields>
-        <fields>OwnerId</fields>
-        <label>New Awesome Compact Layout</label>
-    </compactLayouts>
     <searchLayouts>
         <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
