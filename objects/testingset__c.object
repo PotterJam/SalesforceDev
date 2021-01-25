@@ -152,13 +152,6 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <fields>
-        <fullName>anothertest__c</fullName>
-        <externalId>false</externalId>
-        <label>anothertest</label>
-        <trackTrending>false</trackTrending>
-        <type>AutoNumber</type>
-    </fields>
     <label>testingset</label>
     <nameField>
         <label>testingsets Name</label>
