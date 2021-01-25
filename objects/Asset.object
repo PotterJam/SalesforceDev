@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
@@ -148,11 +149,6 @@
     <fields>
         <fullName>IsInternal</fullName>
         <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>LocationId</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>ManufactureDate</fullName>
