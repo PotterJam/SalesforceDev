@@ -152,6 +152,13 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>atest__c</fullName>
+        <externalId>false</externalId>
+        <label>atest</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
     <label>testingset</label>
     <nameField>
         <label>testingsets Name</label>
