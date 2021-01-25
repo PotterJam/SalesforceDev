@@ -1332,7 +1332,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>testingset__c.atest__c</field>
+        <field>testingset__c.anothertest__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
