@@ -1330,11 +1330,6 @@
         <field>Task.WhoId</field>
         <readable>false</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>testingset__c.testsets__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>newset</label>
     <objectPermissions>
