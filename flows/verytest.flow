@@ -140,6 +140,7 @@
         <label>Create Contact</label>
         <locationX>371</locationX>
         <locationY>197</locationY>
+        <iDontExist>I do not exist</iDontExist>
         <assignRecordIdToReference>curContact.Id</assignRecordIdToReference>
         <connector>
             <targetReference>Assign_Stage_2</targetReference>
