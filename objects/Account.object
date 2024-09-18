@@ -317,6 +317,20 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Field__c</fullName>
+        <description>Customer’s geographical region—for sales operations use only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>In which region is the customer based?</inlineHelpText>
+        <label>Region</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Region</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Industry</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
@@ -373,6 +387,7 @@
     </fields>
     <fields>
         <fullName>Rating</fullName>
+        <inlineHelpText>This indicates the likelihood of a sale being made to this account in the next six months. Cold indicates not likely. Warm indicates quite likely. Hot indicates very likely.</inlineHelpText>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
@@ -500,6 +515,203 @@
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <fields>
+        <fullName>Zone__c</fullName>
+        <description>Customer’s zone within the selected region—for sales operations use only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>In which zone is this customer based? Depends on region.</inlineHelpText>
+        <label>Zone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Field__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>East Asia</fullName>
+                    <default>false</default>
+                    <label>East Asia</label>
+                </value>
+                <value>
+                    <fullName>Oceania</fullName>
+                    <default>false</default>
+                    <label>Oceania</label>
+                </value>
+                <value>
+                    <fullName>Southeast Asia</fullName>
+                    <default>false</default>
+                    <label>Southeast Asia</label>
+                </value>
+                <value>
+                    <fullName>Africa</fullName>
+                    <default>false</default>
+                    <label>Africa</label>
+                </value>
+                <value>
+                    <fullName>Europe</fullName>
+                    <default>false</default>
+                    <label>Europe</label>
+                </value>
+                <value>
+                    <fullName>Middle East</fullName>
+                    <default>false</default>
+                    <label>Middle East</label>
+                </value>
+                <value>
+                    <fullName>UK + Ireland</fullName>
+                    <default>false</default>
+                    <label>UK + Ireland</label>
+                </value>
+                <value>
+                    <fullName>Caribbean</fullName>
+                    <default>false</default>
+                    <label>Caribbean</label>
+                </value>
+                <value>
+                    <fullName>Central America</fullName>
+                    <default>false</default>
+                    <label>Central America</label>
+                </value>
+                <value>
+                    <fullName>South America</fullName>
+                    <default>false</default>
+                    <label>South America</label>
+                </value>
+                <value>
+                    <fullName>Midwest US</fullName>
+                    <default>false</default>
+                    <label>Midwest US</label>
+                </value>
+                <value>
+                    <fullName>Northeast US</fullName>
+                    <default>false</default>
+                    <label>Northeast US</label>
+                </value>
+                <value>
+                    <fullName>Southeast US</fullName>
+                    <default>false</default>
+                    <label>Southeast US</label>
+                </value>
+                <value>
+                    <fullName>Southwest US</fullName>
+                    <default>false</default>
+                    <label>Southwest US</label>
+                </value>
+                <value>
+                    <fullName>West US</fullName>
+                    <default>false</default>
+                    <label>West US</label>
+                </value>
+                <value>
+                    <fullName>Northern Canada</fullName>
+                    <default>false</default>
+                    <label>Northern Canada</label>
+                </value>
+                <value>
+                    <fullName>Mountains and the West</fullName>
+                    <default>false</default>
+                    <label>Mountains and the West</label>
+                </value>
+                <value>
+                    <fullName>The Prairies</fullName>
+                    <default>false</default>
+                    <label>The Prairies</label>
+                </value>
+                <value>
+                    <fullName>Central Canada</fullName>
+                    <default>false</default>
+                    <label>Central Canada</label>
+                </value>
+                <value>
+                    <fullName>East Coast</fullName>
+                    <default>false</default>
+                    <label>East Coast</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>APAC</controllingFieldValue>
+                <valueName>East Asia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>APAC</controllingFieldValue>
+                <valueName>Oceania</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>APAC</controllingFieldValue>
+                <valueName>Southeast Asia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>EMEA</controllingFieldValue>
+                <valueName>Africa</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>EMEA</controllingFieldValue>
+                <valueName>Europe</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>EMEA</controllingFieldValue>
+                <valueName>Middle East</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>EMEA</controllingFieldValue>
+                <valueName>UK + Ireland</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>LATAM</controllingFieldValue>
+                <valueName>Caribbean</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>LATAM</controllingFieldValue>
+                <valueName>Central America</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>LATAM</controllingFieldValue>
+                <valueName>South America</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US</controllingFieldValue>
+                <valueName>Midwest US</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US</controllingFieldValue>
+                <valueName>Northeast US</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US</controllingFieldValue>
+                <valueName>Southeast US</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US</controllingFieldValue>
+                <valueName>Southwest US</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US</controllingFieldValue>
+                <valueName>West US</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <valueName>Northern Canada</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <valueName>Mountains and the West</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <valueName>The Prairies</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <valueName>Central Canada</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <valueName>East Coast</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
         <filterScope>Everything</filterScope>
@@ -567,7 +779,7 @@
         <hasMenubar>true</hasMenubar>
         <hasScrollbars>true</hasScrollbars>
         <hasToolbar>true</hasToolbar>
-        <height>600</height>
+        <height>601</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
         <masterLabel>Billing</masterLabel>
@@ -578,4 +790,394 @@
         <showsStatus>true</showsStatus>
         <url>http://www.genwatt.com/genwatt/billing.htm?actname={!Account_Name}</url>
     </webLinks>
+    <recordTypes>
+        <fullName>abc</fullName>
+        <active>true</active>
+        <label>abc</label>
+        <picklistValues>
+            <picklist>AccountSource</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Active__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CustomerPriority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Field__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Industry</picklist>
+            <values>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Banking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biotechnology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chemicals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food %26 Beverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Machinery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not For Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recreation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utilities</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Ownership</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rating</picklist>
+            <values>
+                <fullName>Cold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLA__c</picklist>
+            <values>
+                <fullName>Bronze</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Platinum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Silver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Channel Partner %2F Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer - Channel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer - Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UpsellOpportunity__c</picklist>
+            <values>
+                <fullName>Maybe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Zone__c</picklist>
+            <values>
+                <fullName>Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Caribbean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Central America</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>East Asia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Midwest US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mountains and the West</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Northeast US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oceania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South America</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Southeast Asia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Southeast US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Southwest US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK %2B Ireland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>West US</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
 </CustomObject>
