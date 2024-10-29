@@ -2,11 +2,11 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>true</custom>
     <loginHours>
-        <mondayEnd>600</mondayEnd>
+        <mondayEnd>200</mondayEnd>
         <mondayStart>120</mondayStart>
         <sundayEnd>0</sundayEnd>
         <sundayStart>0</sundayStart>
-        <thursdayEnd>120</thursdayEnd>
+        <thursdayEnd>130</thursdayEnd>
         <thursdayStart>0</thursdayStart>
         <wednesdayEnd>120</wednesdayEnd>
         <wednesdayStart>0</wednesdayStart>
