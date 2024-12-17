@@ -1982,7 +1982,7 @@
         <layout>CampaignMember-Campaign Member Page Layout</layout>
     </layoutAssignments>
     <recordTypeVisibilities>
-        <default>false</default>
+        <default>true</default>
         <recordType>Account.abc</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
