@@ -4,9 +4,9 @@
     <loginHours>
         <mondayEnd>600</mondayEnd>
         <mondayStart>120</mondayStart>
-        <sundayEnd>1380</sundayEnd>
+        <sundayEnd>0</sundayEnd>
         <sundayStart>0</sundayStart>
-        <thursdayEnd>1440</thursdayEnd>
+        <thursdayEnd>120</thursdayEnd>
         <thursdayStart>0</thursdayStart>
         <wednesdayEnd>120</wednesdayEnd>
         <wednesdayStart>0</wednesdayStart>
