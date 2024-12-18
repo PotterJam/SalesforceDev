@@ -2983,8 +2983,8 @@
         <apexClass>IncrementalTest</apexClass>
     </classAccesses>
     <classAccesses>
+        <enabled>false</enabled>
         <apexClass>IncrementalTest2</apexClass>
-        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>IncrementalTestTest</apexClass>
