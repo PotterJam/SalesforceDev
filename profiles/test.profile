@@ -5,7 +5,7 @@
         <mondayEnd>600</mondayEnd>
         <mondayStart>120</mondayStart>
         <sundayEnd>0</sundayEnd>
-        <sundayStart>0</sundayStart>
+        <sundayStart>10</sundayStart>
         <thursdayEnd>120</thursdayEnd>
         <thursdayStart>0</thursdayStart>
         <wednesdayEnd>120</wednesdayEnd>
@@ -438,7 +438,7 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Asset.Description</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
