@@ -438,7 +438,7 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Asset.Description</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
