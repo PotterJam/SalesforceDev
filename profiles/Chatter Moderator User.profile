@@ -1946,9 +1946,6 @@
     <layoutAssignments>
         <layout>Solution-Solution Layout</layout>
     </layoutAssignments>
-    <layoutAssignments>
-        <layout>Task-Task Layout</layout>
-    </layoutAssignments>
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Metric.Progress</recordType>
