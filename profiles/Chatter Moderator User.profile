@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>false</custom>
+    <userLicense>Chatter Free</userLicense>
     <applicationVisibilities>
         <application>Lead_Generation</application>
         <default>false</default>
@@ -85,7 +87,6 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
-    <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Active__c</field>
@@ -2159,7 +2160,6 @@
         <tab>standard-report</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    <userLicense>Chatter Free</userLicense>
     <userPermissions>
         <enabled>true</enabled>
         <name>ChatterInviteExternalUsers</name>
