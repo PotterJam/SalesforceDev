@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>CallHighlightAction</actionName>
@@ -499,7 +498,18 @@
     <fields>
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields>
+    </fields><fields>
+        <fullName>Account.Government_entity__c</fullName>
+        <type>Checkbox</type>
+        <label>Government entity</label>
+        <description>Indicates that the account is a government entity.</description>
+        <inlineHelpText>Select if this Account represents a government entity.</inlineHelpText>
+        <defaultValue>false</defaultValue>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <required>false</required>
+</fields>
+    
     <listViews>
         <fullName>AllAccounts</fullName>
         <filterScope>Everything</filterScope>
