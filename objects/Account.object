@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>CallHighlightAction</actionName>
@@ -578,4 +577,18 @@
         <showsStatus>true</showsStatus>
         <url>http://www.genwatt.com/genwatt/billing.htm?actname={!Account_Name}</url>
     </webLinks>
-</CustomObject>
+
+    <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Government_Entity__c</fullName>
+    <label>Government entity</label>
+    <type>Checkbox</type>
+    <description>Indicates that the account is a government entity.</description>
+    <inlineHelpText>Check this box when the account represents a government entity.</inlineHelpText>
+    <defaultValue>false</defaultValue>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackFeedHistory>false</trackFeedHistory>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <externalId>false</externalId>
+    <unique>false</unique>
+</CustomField></CustomObject>
