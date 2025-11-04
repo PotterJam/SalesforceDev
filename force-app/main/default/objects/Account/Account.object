@@ -1,0 +1,13 @@
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+  <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Government_entity__c</fullName>
+    <label>Government entity</label>
+    <type>Checkbox</type>
+    <defaultValue>false</defaultValue>
+    <description>Indicates that the account is a government entity.</description>
+    <inlineHelpText>Check this box if the account is a government entity.</inlineHelpText>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+</CustomField>
+</CustomObject>
