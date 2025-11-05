@@ -506,7 +506,18 @@
         <description>Indicates whether the account is a government entity.</description>
         <inlineHelpText>Select this checkbox if this Account is a government entity.</inlineHelpText>
         <trackHistory>true</trackHistory>
+</fields><fields>
+        <fullName>Account.Government_entity__c</fullName>
+        <type>Checkbox</type>
+        <label>Government entity</label>
+        <description>Indicates that the account is a government entity.</description>
+        <inlineHelpText>Select if this Account represents a government entity.</inlineHelpText>
+        <defaultValue>false</defaultValue>
+        <trackHistory>true</trackHistory>
+        <trackFeedHistory>false</trackFeedHistory>
+        <required>false</required>
 </fields>
+    
     
     <listViews>
         <fullName>AllAccounts</fullName>
