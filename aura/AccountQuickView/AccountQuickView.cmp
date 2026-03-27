@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="AccountSyncScheduler">
+    <aura:attribute name="recordId" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <ltng:require scripts="{!$Resource.jQueryLib + '/jquery.min.js'}" afterScriptsLoaded="{!c.scriptsLoaded}" />
+
+    <lightning:card title="Account Quick View">
+        <div aura:id="content" class="slds-p-around_medium">
+            <p>Loading account details...</p>
+        </div>
+        <!-- Aura components can inject unescaped HTML -->
+        <aura:unescapedHtml value="{!v.rawHtml}" />
+    </lightning:card>
+</aura:component>

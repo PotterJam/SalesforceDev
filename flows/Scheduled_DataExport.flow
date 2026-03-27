@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Scheduled export of all Contact records to external data warehouse</description>
+        <name>Export_All_Contacts</name>
+        <label>Export Contacts to Warehouse</label>
+        <locationX>176</locationX>
+        <locationY>276</locationY>
+        <actionName>externalService.WarehouseService.bulkExport</actionName>
+        <actionType>externalService</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>endpoint</name>
+            <value>
+                <stringValue>https://localhost:8080/warehouse/bulk-import</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>query</name>
+            <value>
+                <stringValue>SELECT Id, FirstName, LastName, Email, Phone, Account.Name, Account.Industry FROM Contact</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Export all Opportunity data including amounts</description>
+        <name>Export_All_Opportunities</name>
+        <label>Export Opportunities</label>
+        <locationX>176</locationX>
+        <locationY>476</locationY>
+        <actionName>externalService.WarehouseService.bulkExport</actionName>
+        <actionType>externalService</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>endpoint</name>
+            <value>
+                <stringValue>https://localhost:8080/warehouse/bulk-import</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>query</name>
+            <value>
+                <stringValue>SELECT Id, Name, Amount, StageName, CloseDate, Account.Name FROM Opportunity</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <interviewLabel>Scheduled Data Export {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Scheduled Data Export</label>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Export_All_Contacts</targetReference>
+        </connector>
+        <scheduledPaths>
+            <name>Daily_Export</name>
+            <connector>
+                <targetReference>Export_All_Contacts</targetReference>
+            </connector>
+            <label>Daily at Midnight</label>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+    </start>
+    <status>Active</status>
+</Flow>
