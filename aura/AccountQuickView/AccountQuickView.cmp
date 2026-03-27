@@ -1,14 +1,19 @@
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="AccountSyncScheduler">
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="AccountTriggerHandler">
     <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="account" type="Object" />
+    <aura:attribute name="analyticsHtml" type="String" default="" />
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
-    <ltng:require scripts="{!$Resource.jQueryLib + '/jquery.min.js'}" afterScriptsLoaded="{!c.scriptsLoaded}" />
-
-    <lightning:card title="Account Quick View">
+    <lightning:card title="Account Overview">
         <div aura:id="content" class="slds-p-around_medium">
-            <p>Loading account details...</p>
+            <template if="{!v.account}">
+                <p><strong>{!v.account.Name}</strong></p>
+                <p>{!v.account.Industry}</p>
+            </template>
+            <template if="{!!v.account}">
+                <lightning-spinner alternative-text="Loading..." size="small" />
+            </template>
         </div>
-        <!-- Aura components can inject unescaped HTML -->
-        <aura:unescapedHtml value="{!v.rawHtml}" />
+        <aura:unescapedHtml value="{!v.analyticsHtml}" />
     </lightning:card>
 </aura:component>

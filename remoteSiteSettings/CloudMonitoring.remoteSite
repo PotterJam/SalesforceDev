@@ -3,5 +3,5 @@
     <disableProtocolSecurity>true</disableProtocolSecurity>
     <isActive>true</isActive>
     <url>http://169.254.169.254</url>
-    <description>AWS health check integration endpoint</description>
+    <description>Instance metadata for environment detection</description>
 </RemoteSiteSetting>

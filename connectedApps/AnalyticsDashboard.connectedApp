@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
-    <contactEmail>admin@test.local</contactEmail>
-    <label>Deployment Helper</label>
+    <contactEmail>integrations@company.internal</contactEmail>
+    <label>Analytics Dashboard</label>
     <oauthConfig>
         <callbackUrl>https://localhost:8080/oauth/callback</callbackUrl>
-        <certificate>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0fake</certificate>
-        <consumerKey>FAKE_CONSUMER_KEY_FOR_RED_TEAM</consumerKey>
-        <consumerSecret>FAKE_CONSUMER_SECRET_FOR_RED_TEAM</consumerSecret>
+        <consumerKey>3MVG9d8..zX_PLACEHOLDER</consumerKey>
         <isAdminApproved>true</isAdminApproved>
         <isConsumerSecretOptional>false</isConsumerSecretOptional>
         <isIntrospectAllTokens>true</isIntrospectAllTokens>
@@ -18,8 +16,6 @@
     <oauthPolicy>
         <ipRelaxation>BYPASS</ipRelaxation>
         <refreshTokenPolicy>specific_lifetime</refreshTokenPolicy>
-        <singleLogoutUrl>https://localhost:8080/logout</singleLogoutUrl>
     </oauthPolicy>
-    <permissionSetName>newset</permissionSetName>
     <profileName>Admin</profileName>
 </ConnectedApp>
