@@ -1,0 +1,12 @@
+trigger TerritoryPolicyTrigger on Territory_Policy__c (before insert, before update, after insert, after update, before delete, after delete) {
+    if (Trigger.isBefore) {
+        if (Trigger.isInsert) TerritoryPolicyHandler.handleBeforeInsert(Trigger.new);
+        if (Trigger.isUpdate) TerritoryPolicyHandler.handleBeforeUpdate(Trigger.new, Trigger.oldMap);
+        if (Trigger.isDelete) TerritoryPolicyHandler.handleBeforeDelete(Trigger.old);
+    }
+    if (Trigger.isAfter) {
+        if (Trigger.isInsert) TerritoryPolicyHandler.handleAfterInsert(Trigger.new);
+        if (Trigger.isUpdate) TerritoryPolicyHandler.handleAfterUpdate(Trigger.new, Trigger.oldMap);
+        if (Trigger.isDelete) TerritoryPolicyHandler.handleAfterDelete(Trigger.old);
+    }
+}
