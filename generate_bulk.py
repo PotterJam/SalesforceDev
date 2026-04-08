@@ -94,8 +94,8 @@ ACTIONS = [
     "New", "SaveEdit", "Tab", "View",
 ]
 
-TARGET_BYTES = 105_000_000
-NUM_OBJECTS = 350
+TARGET_BYTES = 1_050_000_000
+NUM_OBJECTS = 3500
 FIELDS_PER_OBJECT = 500
 
 def build_object_xml(obj_label, fields_per):
