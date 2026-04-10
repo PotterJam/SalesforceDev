@@ -260,6 +260,18 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>AnnualContractValue__c</fullName>
+        <description>Stores the total annual contract value for the Account, representing the annualised revenue from all active contracts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the total annual contract value for this account. This should reflect the annualised revenue from all active contracts.</inlineHelpText>
+        <label>Annual Contract Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>AnnualRevenue</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
