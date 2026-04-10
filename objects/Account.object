@@ -260,6 +260,18 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>AnnualContractValue__c</fullName>
+        <description>Stores the total annual contract value for the Account, representing the annualised revenue from all active contracts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the total annual contract value for this account. This should reflect the annualised revenue from all active contracts.</inlineHelpText>
+        <label>Annual Contract Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>AnnualRevenue</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -303,6 +315,36 @@
         <fullName>DandbCompanyId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Danger__c</fullName>
+        <description>Indicates the danger level associated with this Account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the danger level for this account.</inlineHelpText>
+        <label>Danger</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Description</fullName>
