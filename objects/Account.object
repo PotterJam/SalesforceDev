@@ -237,6 +237,17 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>agent_jim__c</fullName>
+        <description>The agent associated with this account</description>
+        <externalId>false</externalId>
+        <label>Agent</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Active__c</fullName>
         <externalId>false</externalId>
         <label>Active</label>
