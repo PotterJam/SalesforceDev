@@ -458,6 +458,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <readable>false</readable>
+        <field>Account.Annual_Contract_Value__c</field>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <readable>false</readable>
         <field>Account.AnnualRevenue</field>
     </fieldPermissions>
     <fieldPermissions>

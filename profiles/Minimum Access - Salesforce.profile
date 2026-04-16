@@ -85,6 +85,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <custom>false</custom>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Annual_Contract_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
