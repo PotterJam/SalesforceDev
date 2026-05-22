@@ -217,7 +217,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.DunsNumber</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -232,7 +232,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.Sic</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -252,12 +252,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.AccountNumber</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Contact.AssistantName</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -267,22 +267,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.Rating</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.NaicsCode</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Contact.Description</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Contact.CleanStatus</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -292,7 +292,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.Ownership</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -302,7 +302,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.TickerSymbol</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -327,7 +327,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.Site</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -347,7 +347,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.Tradestyle</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -367,7 +367,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.YearStarted</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -442,7 +442,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Contact.HomePhone</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -462,7 +462,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Case.AssetId</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -497,7 +497,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Case.SourceId</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -522,7 +522,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.Occupation</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -567,12 +567,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Lead.CompanyDunsNumber</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Lead.AnnualRevenue</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -587,7 +587,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Contact.LeadSource</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -602,12 +602,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Contact.OtherAddress</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Contact.OtherPhone</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -667,7 +667,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Contact.AssistantPhone</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -677,7 +677,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Contact.Birthdate</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -717,7 +717,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.MasterRecordId</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -732,7 +732,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.InfluencerRating</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -747,17 +747,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.BirthDate</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.HasOptedOutTracking</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.ChildrenCount</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -767,7 +767,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.ConsumerCreditScoreProviderName</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -777,7 +777,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.DeathDate</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -787,12 +787,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.HasOptedOutProcessing</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.HasOptedOutSolicit</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -832,7 +832,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.CanStorePiiElsewhere</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -842,7 +842,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.ConsumerCreditScore</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -872,17 +872,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Order.ShipToContactId</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.ConvictionsCount</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.HasOptedOutGeoTracking</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -892,7 +892,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.HasOptedOutProfiling</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -902,7 +902,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.IndividualsAge</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -922,42 +922,42 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.SendIndividualData</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.ShouldForget</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.Website</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Lead.DandbCompanyId</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.MilitaryService</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Lead.Fax</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Lead.CleanStatus</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.DandbCompanyId</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -977,7 +977,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.NaicsDesc</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -987,7 +987,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Individual.IsHomeOwner</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1002,7 +1002,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Lead.Description</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1027,7 +1027,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Opportunity.TotalOpportunityQuantity</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1072,7 +1072,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Order.BillToContactId</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1087,7 +1087,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Order.CompanyAuthorizedDate</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1097,7 +1097,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Order.ContractName</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1107,7 +1107,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Order.CustomerAuthorizedDate</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1122,12 +1122,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Order.PoNumber</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Opportunity.ExpectedRevenue</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1137,7 +1137,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Opportunity.IsPrivate</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1182,12 +1182,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.CleanStatus</field>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.Fax</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1202,7 +1202,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Order.PoDate</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1227,7 +1227,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Order.OrderReferenceNumber</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1247,7 +1247,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Order.Name</field>
     </fieldPermissions>
     <fieldPermissions>
@@ -1762,7 +1762,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <readable>false</readable>
+        <readable>true</readable>
         <field>Account.AnnualRevenue</field>
     </fieldPermissions>
     <fieldPermissions>
