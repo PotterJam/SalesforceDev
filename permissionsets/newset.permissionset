@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldPermissions>
         <editable>false</editable>
@@ -33,7 +33,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.CustomerPriority__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -73,7 +73,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.NaicsDesc</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
