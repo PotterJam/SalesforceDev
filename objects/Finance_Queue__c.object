@@ -6486,6 +6486,20 @@
         <required>false</required>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>Assigned_User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The user assigned to this record via round-robin rotation. Used by the Finance Queue Round Robin flow to track assignments and determine the next assignee.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>User assigned via round-robin rotation.</inlineHelpText>
+        <label>Assigned User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Finance_Queues</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
     <label>Finance Queue</label>
     <nameField>
         <label>Finance Queue Name</label>
