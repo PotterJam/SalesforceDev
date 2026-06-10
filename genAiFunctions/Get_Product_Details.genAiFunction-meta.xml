@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Retrieves product details including features, specifications, and availability for a given product name. Used by the Product QA Agent to answer salesperson questions about products.</description>
+    <masterLabel>Get Product Details</masterLabel>
+    <inputs>
+        <apiName>productName</apiName>
+        <dataType>Text</dataType>
+        <description>The name or identifier of the product the salesperson is asking about</description>
+        <isRequired>true</isRequired>
+        <masterLabel>Product Name</masterLabel>
+    </inputs>
+    <outputs>
+        <apiName>productDetails</apiName>
+        <dataType>Text</dataType>
+        <description>Product information including features, specifications, pricing, and availability</description>
+        <masterLabel>Product Details</masterLabel>
+    </outputs>
+</GenAiFunction>
