@@ -28,11 +28,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead_Assignment_Log__c.Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Lead_Assignment_Member__c.Is_Available__c</field>
         <readable>true</readable>
     </fieldPermissions>
