@@ -153,7 +153,6 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-
     <fields>
         <fullName>Assignment_Pool__c</fullName>
         <description>The assignment pool this member belongs to. Deleting the pool will cascade-delete all members.</description>
@@ -179,7 +178,7 @@
         <label>User</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Lead_Assignment_Members</relationshipName>
-        <required>true</required>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
