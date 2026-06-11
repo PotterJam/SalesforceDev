@@ -153,7 +153,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
+
     <fields>
         <fullName>Assignment_Pool__c</fullName>
         <description>The assignment pool this member belongs to. Deleting the pool will cascade-delete all members.</description>
@@ -172,7 +172,7 @@
     </fields>
     <fields>
         <fullName>User__c</fullName>
-        <deleteConstraint>Restrict</deleteConstraint>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>The Salesforce user who will receive Lead assignments from this pool.</description>
         <externalId>false</externalId>
         <inlineHelpText>Select the user to include in this assignment pool.</inlineHelpText>
