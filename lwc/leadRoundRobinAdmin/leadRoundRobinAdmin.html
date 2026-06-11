@@ -1,0 +1,106 @@
+<template>
+    <lightning-card title="Lead Round Robin Administration" icon-name="standard:lead">
+        <div class="slds-m-around_medium">
+            <!-- Pool Selector -->
+            <lightning-combobox
+                name="poolSelector"
+                label="Assignment Pool"
+                value={selectedPoolId}
+                options={poolOptions}
+                onchange={handlePoolChange}
+                placeholder="Select a pool..."
+            ></lightning-combobox>
+
+            <template if:true={selectedPoolId}>
+                <!-- Members Section -->
+                <div class="slds-m-top_medium">
+                    <lightning-card title="Pool Members" icon-name="standard:user">
+                        <div slot="actions">
+                            <lightning-button
+                                label="Add Member"
+                                icon-name="utility:add"
+                                onclick={handleOpenAddMember}
+                            ></lightning-button>
+                        </div>
+
+                        <template if:true={members.length}>
+                            <lightning-datatable
+                                key-field="Id"
+                                data={members}
+                                columns={memberColumns}
+                                onrowaction={handleMemberRowAction}
+                                hide-checkbox-column
+                            ></lightning-datatable>
+                        </template>
+                        <template if:false={members.length}>
+                            <div class="slds-align_absolute-center slds-m-around_medium">
+                                <p class="slds-text-body_regular">No members in this pool. Add members to begin round-robin assignment.</p>
+                            </div>
+                        </template>
+                    </lightning-card>
+                </div>
+
+                <!-- Recent Logs Section -->
+                <div class="slds-m-top_medium">
+                    <lightning-card title="Recent Assignment Logs" icon-name="standard:log_a_call">
+                        <template if:true={logs.length}>
+                            <lightning-datatable
+                                key-field="Id"
+                                data={logs}
+                                columns={logColumns}
+                                hide-checkbox-column
+                            ></lightning-datatable>
+                        </template>
+                        <template if:false={logs.length}>
+                            <div class="slds-align_absolute-center slds-m-around_medium">
+                                <p class="slds-text-body_regular">No assignment logs found for this pool.</p>
+                            </div>
+                        </template>
+                    </lightning-card>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <!-- Add Member Modal -->
+    <template if:true={showAddMemberModal}>
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-modal__title">Add Pool Member</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-record-picker
+                        label="User"
+                        placeholder="Search for a user..."
+                        object-api-name="User"
+                        value={newMemberUserId}
+                        onchange={handleUserSelection}
+                    ></lightning-record-picker>
+                    <lightning-input
+                        type="number"
+                        label="Sort Order"
+                        value={newMemberSortOrder}
+                        onchange={handleSortOrderChange}
+                        min="1"
+                        class="slds-m-top_small"
+                    ></lightning-input>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        label="Cancel"
+                        onclick={handleCloseAddMember}
+                    ></lightning-button>
+                    <lightning-button
+                        variant="brand"
+                        label="Add"
+                        onclick={handleSaveMember}
+                        disabled={isSaveDisabled}
+                        class="slds-m-left_x-small"
+                    ></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
