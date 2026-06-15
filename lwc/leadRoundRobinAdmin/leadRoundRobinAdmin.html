@@ -1,0 +1,165 @@
+<template>
+    <lightning-card title="Lead Round Robin Configuration" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={error}>
+                <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                    <span class="slds-assistive-text">error</span>
+                    <h2>{error}</h2>
+                </div>
+            </template>
+
+            <!-- Configuration Section -->
+            <div class="slds-section slds-is-open">
+                <h3 class="slds-section__title">
+                    <span class="slds-truncate slds-p-horizontal_small">Configuration</span>
+                </h3>
+                <div class="slds-section__content slds-p-around_small">
+                    <lightning-input
+                        type="toggle"
+                        label="Active"
+                        checked={isActive}
+                        onchange={handleActiveToggle}
+                        message-toggle-active="Round Robin Enabled"
+                        message-toggle-inactive="Round Robin Disabled">
+                    </lightning-input>
+                    <lightning-textarea
+                        label="Description"
+                        value={description}
+                        onchange={handleDescriptionChange}
+                        class="slds-m-top_small">
+                    </lightning-textarea>
+                    <div class="slds-m-top_small">
+                        <lightning-button
+                            label="Save Configuration"
+                            variant="brand"
+                            onclick={handleSaveConfig}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Queue Pool Section -->
+            <div class="slds-section slds-is-open slds-m-top_medium">
+                <h3 class="slds-section__title">
+                    <span class="slds-truncate slds-p-horizontal_small">Queue Pool</span>
+                </h3>
+                <div class="slds-section__content slds-p-around_small">
+                    <div class="slds-grid slds-gutters slds-m-bottom_small">
+                        <div class="slds-col slds-size_5-of-12">
+                            <lightning-combobox
+                                label="Available Queues"
+                                value={selectedQueueId}
+                                options={availableQueueOptions}
+                                onchange={handleQueueSelection}
+                                placeholder="Select a queue to add">
+                            </lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_2-of-12 slds-align-bottom">
+                            <lightning-button
+                                label="Add Queue"
+                                variant="neutral"
+                                onclick={handleAddQueue}
+                                disabled={isAddQueueDisabled}>
+                            </lightning-button>
+                        </div>
+                    </div>
+                    <template if:true={hasQueues}>
+                        <lightning-datatable
+                            key-field="id"
+                            data={queues}
+                            columns={queueColumns}
+                            onrowaction={handleQueueRowAction}
+                            onsave={handleQueueSave}
+                            draft-values={queueDraftValues}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                    </template>
+                    <template if:false={hasQueues}>
+                        <div class="slds-align_absolute-center slds-p-around_medium slds-text-color_weak">
+                            No queues configured. Add queues to start the rotation.
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Criteria Section -->
+            <div class="slds-section slds-is-open slds-m-top_medium">
+                <h3 class="slds-section__title">
+                    <span class="slds-truncate slds-p-horizontal_small">Qualification Criteria</span>
+                </h3>
+                <div class="slds-section__content slds-p-around_small">
+                    <div class="slds-grid slds-gutters slds-m-bottom_small">
+                        <div class="slds-col slds-size_3-of-12">
+                            <lightning-input
+                                label="Field API Name"
+                                value={newCriteriaField}
+                                onchange={handleCriteriaFieldChange}
+                                placeholder="e.g. LeadSource">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_3-of-12">
+                            <lightning-combobox
+                                label="Operator"
+                                value={newCriteriaOperator}
+                                options={operatorOptions}
+                                onchange={handleCriteriaOperatorChange}>
+                            </lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_3-of-12">
+                            <lightning-input
+                                label="Value"
+                                value={newCriteriaValue}
+                                onchange={handleCriteriaValueChange}
+                                placeholder="Expected value">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_2-of-12 slds-align-bottom">
+                            <lightning-button
+                                label="Add Criterion"
+                                variant="neutral"
+                                onclick={handleAddCriteria}
+                                disabled={isAddCriteriaDisabled}>
+                            </lightning-button>
+                        </div>
+                    </div>
+                    <template if:true={hasCriteria}>
+                        <lightning-datatable
+                            key-field="id"
+                            data={criteria}
+                            columns={criteriaColumns}
+                            onrowaction={handleCriteriaRowAction}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                    </template>
+                    <template if:false={hasCriteria}>
+                        <div class="slds-align_absolute-center slds-p-around_medium slds-text-color_weak">
+                            No criteria configured. All Leads will enter the round robin.
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Assignment Log Section -->
+            <div class="slds-section slds-is-open slds-m-top_medium">
+                <h3 class="slds-section__title">
+                    <span class="slds-truncate slds-p-horizontal_small">Recent Assignment Log</span>
+                </h3>
+                <div class="slds-section__content slds-p-around_small">
+                    <template if:true={hasLogs}>
+                        <lightning-datatable
+                            key-field="id"
+                            data={logs}
+                            columns={logColumns}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                    </template>
+                    <template if:false={hasLogs}>
+                        <div class="slds-align_absolute-center slds-p-around_medium slds-text-color_weak">
+                            No assignment logs yet.
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

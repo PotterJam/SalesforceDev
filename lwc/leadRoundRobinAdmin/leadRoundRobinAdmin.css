@@ -1,0 +1,11 @@
+.slds-section__title {
+    background-color: var(--lwc-colorBackgroundAlt, #f3f3f3);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--lwc-colorBorder, #dddbda);
+    font-weight: 700;
+}
+
+.slds-section__content {
+    border: 1px solid var(--lwc-colorBorder, #dddbda);
+    border-top: none;
+}
