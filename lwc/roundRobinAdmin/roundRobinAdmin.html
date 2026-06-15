@@ -1,0 +1,261 @@
+<template>
+    <lightning-card title="Round Robin Administration">
+        <div class="slds-grid slds-wrap slds-p-around_medium">
+            <!-- Group List Panel -->
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 slds-p-right_medium">
+                <lightning-card title="Groups" icon-name="standard:groups">
+                    <lightning-button
+                        label="New Group"
+                        variant="brand"
+                        onclick={handleNewGroup}
+                        slot="actions"
+                    ></lightning-button>
+                    <div class="slds-p-around_small">
+                        <template if:true={groups}>
+                            <template for:each={groups} for:item="group">
+                                <div key={group.Id} class={groupItemClass} data-id={group.Id} onclick={handleSelectGroup}>
+                                    <div class="slds-grid slds-grid_align-spread">
+                                        <div class="slds-truncate">
+                                            <span class="slds-text-body_regular">{group.Name}</span>
+                                            <template if:true={group.Active__c}>
+                                                <lightning-badge label="Active" class="slds-m-left_x-small"></lightning-badge>
+                                            </template>
+                                            <template if:false={group.Active__c}>
+                                                <lightning-badge label="Inactive" class="slds-m-left_x-small slds-badge_inverse"></lightning-badge>
+                                            </template>
+                                        </div>
+                                        <span class="slds-text-body_small">P{group.Priority__c}</span>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+                        <template if:false={groups}>
+                            <div class="slds-align_absolute-center slds-p-around_medium">
+                                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                            </div>
+                        </template>
+                    </div>
+                </lightning-card>
+            </div>
+
+            <!-- Group Detail / Edit Panel -->
+            <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12">
+                <template if:true={selectedGroup}>
+                    <!-- Group Form -->
+                    <lightning-card title="Group Details" icon-name="standard:record">
+                        <lightning-button-group slot="actions">
+                            <lightning-button label="Save" variant="brand" onclick={handleSaveGroup}></lightning-button>
+                            <lightning-button label="Delete" variant="destructive" onclick={handleDeleteGroup}></lightning-button>
+                        </lightning-button-group>
+                        <div class="slds-p-around_medium">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                    <lightning-input
+                                        label="Active"
+                                        type="toggle"
+                                        checked={selectedGroup.Active__c}
+                                        onchange={handleGroupFieldChange}
+                                        data-field="Active__c"
+                                    ></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                    <lightning-input
+                                        label="Priority"
+                                        type="number"
+                                        value={selectedGroup.Priority__c}
+                                        onchange={handleGroupFieldChange}
+                                        data-field="Priority__c"
+                                        min="1"
+                                        required
+                                    ></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-1 slds-p-around_x-small">
+                                    <lightning-textarea
+                                        label="Description"
+                                        value={selectedGroup.Description__c}
+                                        onchange={handleGroupFieldChange}
+                                        data-field="Description__c"
+                                        max-length="500"
+                                    ></lightning-textarea>
+                                </div>
+                            </div>
+                            <h3 class="slds-text-heading_small slds-m-top_medium slds-m-bottom_small">Eligibility Criteria</h3>
+                            <p class="slds-text-body_small slds-m-bottom_small">Leave blank to match all values. Use comma-separated lists for multiple values.</p>
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-1 slds-p-around_x-small">
+                                    <lightning-input
+                                        label="Lead Source Criteria"
+                                        value={selectedGroup.Lead_Source_Criteria__c}
+                                        onchange={handleGroupFieldChange}
+                                        data-field="Lead_Source_Criteria__c"
+                                        placeholder="e.g. Web, Phone Inquiry, Partner"
+                                    ></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                    <lightning-input
+                                        label="Country Criteria"
+                                        value={selectedGroup.Country_Criteria__c}
+                                        onchange={handleGroupFieldChange}
+                                        data-field="Country_Criteria__c"
+                                        placeholder="e.g. US, CA, UK"
+                                    ></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                    <lightning-input
+                                        label="Rating Criteria"
+                                        value={selectedGroup.Rating_Criteria__c}
+                                        onchange={handleGroupFieldChange}
+                                        data-field="Rating_Criteria__c"
+                                        placeholder="e.g. Hot, Warm"
+                                    ></lightning-input>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning-card>
+
+                    <!-- Members Section -->
+                    <lightning-card title="Members" icon-name="standard:user" class="slds-m-top_medium">
+                        <lightning-button
+                            label="Add Member"
+                            variant="brand"
+                            onclick={handleAddMember}
+                            slot="actions"
+                        ></lightning-button>
+                        <div class="slds-p-around_medium">
+                            <!-- User Search -->
+                            <template if:true={showUserSearch}>
+                                <div class="slds-m-bottom_medium slds-box">
+                                    <lightning-input
+                                        label="Search Users"
+                                        type="search"
+                                        onchange={handleUserSearch}
+                                        placeholder="Type at least 2 characters..."
+                                    ></lightning-input>
+                                    <template if:true={userSearchResults}>
+                                        <ul class="slds-listbox slds-m-top_x-small">
+                                            <template for:each={userSearchResults} for:item="user">
+                                                <li key={user.Id} class="slds-listbox__item slds-p-around_xx-small" onclick={handleSelectUser} data-id={user.Id}>
+                                                    <span class="slds-text-body_regular">{user.Name}</span>
+                                                    <span class="slds-text-body_small slds-m-left_small">{user.Email}</span>
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </template>
+                                </div>
+                            </template>
+
+                            <!-- Members Table -->
+                            <template if:true={members.length}>
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">User</th>
+                                            <th scope="col">Sort Order</th>
+                                            <th scope="col">Active</th>
+                                            <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={members} for:item="member">
+                                            <tr key={member.Id}>
+                                                <td>{member.User__r.Name}</td>
+                                                <td>
+                                                    <lightning-input
+                                                        type="number"
+                                                        value={member.Sort_Order__c}
+                                                        variant="label-hidden"
+                                                        data-id={member.Id}
+                                                        data-field="Sort_Order__c"
+                                                        onchange={handleMemberFieldChange}
+                                                        min="1"
+                                                    ></lightning-input>
+                                                </td>
+                                                <td>
+                                                    <lightning-input
+                                                        type="toggle"
+                                                        checked={member.Is_Active__c}
+                                                        variant="label-hidden"
+                                                        data-id={member.Id}
+                                                        data-field="Is_Active__c"
+                                                        onchange={handleMemberFieldChange}
+                                                    ></lightning-input>
+                                                </td>
+                                                <td>
+                                                    <lightning-button-icon
+                                                        icon-name="utility:delete"
+                                                        variant="bare"
+                                                        alternative-text="Remove"
+                                                        data-id={member.Id}
+                                                        onclick={handleDeleteMember}
+                                                    ></lightning-button-icon>
+                                                </td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                                <lightning-button
+                                    label="Save Members"
+                                    variant="brand"
+                                    onclick={handleSaveMembers}
+                                    class="slds-m-top_small"
+                                ></lightning-button>
+                            </template>
+                            <template if:false={members.length}>
+                                <p class="slds-text-body_regular slds-align_absolute-center">No members in this group. Click "Add Member" to get started.</p>
+                            </template>
+                        </div>
+                    </lightning-card>
+
+                    <!-- Logs Section -->
+                    <lightning-card title="Assignment Logs" icon-name="standard:log_a_call" class="slds-m-top_medium">
+                        <lightning-button
+                            label="Refresh"
+                            onclick={handleRefreshLogs}
+                            slot="actions"
+                        ></lightning-button>
+                        <div class="slds-p-around_medium">
+                            <template if:true={logs.length}>
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Lead</th>
+                                            <th scope="col">Assigned To</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Error</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={logs} for:item="log">
+                                            <tr key={log.Id}>
+                                                <td>{log.formattedDate}</td>
+                                                <td>{log.Lead__r.Name}</td>
+                                                <td>{log.Assigned_To__r.Name}</td>
+                                                <td>
+                                                    <lightning-badge label={log.Status__c} class={log.statusClass}></lightning-badge>
+                                                </td>
+                                                <td class="slds-truncate" title={log.Error_Message__c}>{log.Error_Message__c}</td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </template>
+                            <template if:false={logs.length}>
+                                <p class="slds-text-body_regular slds-align_absolute-center">No assignment logs yet.</p>
+                            </template>
+                        </div>
+                    </lightning-card>
+                </template>
+
+                <template if:false={selectedGroup}>
+                    <div class="slds-align_absolute-center slds-p-around_large">
+                        <div class="slds-text-align_center">
+                            <lightning-icon icon-name="utility:info" size="large" class="slds-m-bottom_medium"></lightning-icon>
+                            <p class="slds-text-heading_small">Select a group from the left panel or create a new one.</p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>
