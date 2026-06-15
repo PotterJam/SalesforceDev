@@ -56,11 +56,6 @@
         <field>Lead_Assignment_Pool__c.Last_Assigned_Index__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead_Assignment_Pool__c.Pool_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Lead Round Robin Admin</label>
     <objectPermissions>
