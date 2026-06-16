@@ -446,6 +446,30 @@
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <fields>
+        <fullName>Round_Robin_Assigned__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether this Lead was assigned to its owner via the round-robin assignment process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if this Lead was assigned via round-robin.</inlineHelpText>
+        <label>Round Robin Assigned</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Round_Robin_Assigned_Date__c</fullName>
+        <description>Date and time when this Lead was assigned to its current owner via the round-robin process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When this Lead was assigned via round-robin.</inlineHelpText>
+        <label>Round Robin Assigned Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
     <listViews>
         <fullName>AllOpenLeads</fullName>
         <filterScope>Everything</filterScope>
