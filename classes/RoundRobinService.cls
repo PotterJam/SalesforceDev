@@ -19,9 +19,9 @@ public with sharing class RoundRobinService {
                        Lead_Source_Criteria__c, Country_Criteria__c, Rating_Criteria__c
                 FROM Round_Robin_Group__c
                 WHERE Active__c = true
-                ORDER BY Priority__c ASC
                 FOR UPDATE
             ];
+            sortGroupsByPriority(groups);
 
             if (groups.isEmpty()) {
                 return;
@@ -131,6 +131,20 @@ public with sharing class RoundRobinService {
         }
 
         pendingResults.clear();
+    }
+
+    private static void sortGroupsByPriority(List<Round_Robin_Group__c> groups) {
+        for (Integer i = 0; i < groups.size() - 1; i++) {
+            for (Integer j = i + 1; j < groups.size(); j++) {
+                Decimal pi = groups[i].Priority__c != null ? groups[i].Priority__c : 999;
+                Decimal pj = groups[j].Priority__c != null ? groups[j].Priority__c : 999;
+                if (pj < pi) {
+                    Round_Robin_Group__c temp = groups[i];
+                    groups[i] = groups[j];
+                    groups[j] = temp;
+                }
+            }
+        }
     }
 
     private static Round_Robin_Group__c findMatchingGroup(
