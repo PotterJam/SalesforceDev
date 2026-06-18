@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Quote_Notification_Email</name>
+        <label>Send Quote Notification Email</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <faultConnector>
+            <targetReference>Assign_Fault_Message</targetReference>
+        </faultConnector>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>jim@gearset.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Email_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Email_Body</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <assignments>
+        <name>Assign_Fault_Message</name>
+        <label>Assign Fault Message</label>
+        <locationX>440</locationX>
+        <locationY>311</locationY>
+        <assignmentItems>
+            <assignToReference>FaultMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <apiVersion>59.0</apiVersion>
+    <description>Sends an email notification to jim@gearset.com when a Quote is created. Triggers on Quote record creation (after save).</description>
+    <environments>Default</environments>
+    <interviewLabel>Quote Auto Process {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quote Auto Process</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <runInMode>SystemModeWithSharing</runInMode>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Quote_Notification_Email</targetReference>
+        </connector>
+        <object>Quote</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <textTemplates>
+        <name>Email_Body</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text><![CDATA[<p>A new Quote has been created.</p><p><b>Quote Name:</b> {!$Record.Name}</p><p><b>Quote Number:</b> {!$Record.QuoteNumber}</p>]]></text>
+    </textTemplates>
+    <textTemplates>
+        <name>Email_Subject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>New Quote Created: {!$Record.Name}</text>
+    </textTemplates>
+    <variables>
+        <name>FaultMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
