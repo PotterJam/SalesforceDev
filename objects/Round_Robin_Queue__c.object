@@ -173,7 +173,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
-        <required>false</required>
     </fields>
     <fields>
         <fullName>Last_Assigned_Index__c</fullName>
@@ -184,10 +183,10 @@
         <label>Last Assigned Index</label>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Number</type>
         <precision>18</precision>
-        <scale>0</scale>
         <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <label>Round Robin Queue</label>

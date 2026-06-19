@@ -190,12 +190,12 @@
         <externalId>false</externalId>
         <inlineHelpText>The position of this member in the assignment rotation. Lower numbers are assigned first.</inlineHelpText>
         <label>Sort Order</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
-        <precision>18</precision>
-        <scale>0</scale>
-        <required>true</required>
         <unique>false</unique>
     </fields>
     <fields>
@@ -216,12 +216,12 @@
         <externalId>false</externalId>
         <inlineHelpText>Total number of Leads assigned to this member. Updated automatically.</inlineHelpText>
         <label>Assignment Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
-        <precision>18</precision>
-        <scale>0</scale>
-        <required>false</required>
         <unique>false</unique>
     </fields>
     <label>Round Robin Member</label>
