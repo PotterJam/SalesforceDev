@@ -1,0 +1,97 @@
+<template>
+    <lightning-card title="Round Robin Manager" icon-name="standard:queue">
+        <div class="slds-m-around_medium">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </template>
+
+            <template if:false={isLoading}>
+                <template if:true={hasGroups}>
+                    <template for:each={groups} for:item="group">
+                        <div key={group.Id} class="slds-card slds-m-bottom_small">
+                            <div class="slds-card__header slds-grid">
+                                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                    <div class="slds-media__body">
+                                        <h2 class="slds-card__header-title">
+                                            <span class="slds-text-heading_small">{group.Name}</span>
+                                            <template if:true={group.Active__c}>
+                                                <lightning-badge label="Active" class="slds-m-left_x-small"></lightning-badge>
+                                            </template>
+                                            <template if:false={group.Active__c}>
+                                                <lightning-badge label="Inactive" class="slds-m-left_x-small slds-badge_inverse"></lightning-badge>
+                                            </template>
+                                        </h2>
+                                    </div>
+                                </header>
+                                <div class="slds-no-flex">
+                                    <lightning-button-group>
+                                        <lightning-button
+                                            label={group.toggleLabel}
+                                            data-group-id={group.Id}
+                                            data-active={group.Active__c}
+                                            onclick={handleToggleGroup}
+                                            variant="neutral">
+                                        </lightning-button>
+                                        <lightning-button
+                                            label="Reset Counters"
+                                            data-group-id={group.Id}
+                                            onclick={handleResetCounters}
+                                            variant="neutral">
+                                        </lightning-button>
+                                        <lightning-button
+                                            label={group.expandLabel}
+                                            data-group-id={group.Id}
+                                            onclick={handleExpandGroup}
+                                            variant="neutral"
+                                            icon-name={group.expandIcon}>
+                                        </lightning-button>
+                                    </lightning-button-group>
+                                </div>
+                            </div>
+                            <div class="slds-card__body slds-card__body_inner">
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col">
+                                        <p class="slds-text-body_small slds-text-color_weak">Total Assignments</p>
+                                        <p class="slds-text-heading_small">{group.Total_Assignments__c}</p>
+                                    </div>
+                                    <div class="slds-col">
+                                        <p class="slds-text-body_small slds-text-color_weak">Last Index</p>
+                                        <p class="slds-text-heading_small">{group.Last_Assigned_Index__c}</p>
+                                    </div>
+                                    <template if:true={group.Error_Message__c}>
+                                        <div class="slds-col">
+                                            <p class="slds-text-body_small slds-text-color_error">Last Error</p>
+                                            <p class="slds-text-body_small slds-text-color_error">{group.Error_Message__c}</p>
+                                        </div>
+                                    </template>
+                                </div>
+
+                                <template if:true={group.isExpanded}>
+                                    <div class="slds-m-top_medium">
+                                        <template if:true={group.hasMembers}>
+                                            <lightning-datatable
+                                                key-field="Id"
+                                                data={group.members}
+                                                columns={memberColumns}
+                                                hide-checkbox-column
+                                                onrowaction={handleMemberAction}>
+                                            </lightning-datatable>
+                                        </template>
+                                        <template if:false={group.hasMembers}>
+                                            <p class="slds-text-body_regular slds-text-color_weak">No members configured for this group.</p>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+                <template if:false={hasGroups}>
+                    <div class="slds-illustration slds-illustration_small">
+                        <p class="slds-text-body_regular">No round robin groups found. Create a Round Robin Group record to get started.</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
