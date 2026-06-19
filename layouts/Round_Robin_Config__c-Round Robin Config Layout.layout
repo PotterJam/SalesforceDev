@@ -57,6 +57,6 @@
         <fields>Sort_Order__c</fields>
         <fields>Last_Assigned_Date__c</fields>
         <fields>Assignment_Count__c</fields>
-        <relatedList>Round_Robin_Members__r</relatedList>
+        <relatedList>Round_Robin_Member__c.Round_Robin_Members__r</relatedList>
     </relatedLists>
 </Layout>
