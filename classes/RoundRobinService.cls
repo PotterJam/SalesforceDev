@@ -56,15 +56,44 @@ public with sharing class RoundRobinService {
     }
 
     private static List<Round_Robin_Member__c> getAvailableMembers(Id configId) {
-        return [
+        List<Round_Robin_Member__c> members = [
             SELECT Id, User__c, Sort_Order__c, Last_Assigned_Date__c, Assignment_Count__c
             FROM Round_Robin_Member__c
             WHERE Round_Robin_Config__c = :configId
                 AND Is_Available__c = true
                 AND User__c != null
-            ORDER BY Last_Assigned_Date__c ASC NULLS FIRST, Sort_Order__c ASC
             FOR UPDATE
         ];
+        members.sort(new MemberSortComparator());
+        return members;
+    }
+
+    private class MemberSortComparator implements Comparator<Round_Robin_Member__c> {
+        public Integer compare(Round_Robin_Member__c a, Round_Robin_Member__c b) {
+            Integer dateCompare = compareDates(a.Last_Assigned_Date__c, b.Last_Assigned_Date__c);
+            if (dateCompare != 0) {
+                return dateCompare;
+            }
+            return compareNumbers(a.Sort_Order__c, b.Sort_Order__c);
+        }
+
+        private Integer compareDates(DateTime d1, DateTime d2) {
+            if (d1 == null && d2 == null) return 0;
+            if (d1 == null) return -1;
+            if (d2 == null) return 1;
+            if (d1 < d2) return -1;
+            if (d1 > d2) return 1;
+            return 0;
+        }
+
+        private Integer compareNumbers(Decimal n1, Decimal n2) {
+            if (n1 == null && n2 == null) return 0;
+            if (n1 == null) return -1;
+            if (n2 == null) return 1;
+            if (n1 < n2) return -1;
+            if (n1 > n2) return 1;
+            return 0;
+        }
     }
 
     private static void assignToFallback(List<Lead> leads, Round_Robin_Config__c config) {
