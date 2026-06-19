@@ -1,0 +1,137 @@
+<template>
+    <lightning-card title="Round Robin Agent Management" icon-name="standard:assignment">
+        <div slot="actions">
+            <lightning-button
+                label="Add Agent"
+                variant="brand"
+                icon-name="utility:add"
+                onclick={handleOpenAddModal}>
+            </lightning-button>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </template>
+
+            <template if:false={isLoading}>
+                <template if:true={hasAgents}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col"><div class="slds-truncate">Order</div></th>
+                                <th scope="col"><div class="slds-truncate">Agent</div></th>
+                                <th scope="col"><div class="slds-truncate">Available</div></th>
+                                <th scope="col"><div class="slds-truncate">Last Assigned</div></th>
+                                <th scope="col"><div class="slds-truncate">Actions</div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={agents} for:item="agent">
+                                <tr key={agent.Id}>
+                                    <td><div class="slds-truncate">{agent.Sort_Order__c}</div></td>
+                                    <td><div class="slds-truncate">{agent.User__r.Name}</div></td>
+                                    <td>
+                                        <lightning-input
+                                            type="toggle"
+                                            checked={agent.Is_Available__c}
+                                            data-id={agent.Id}
+                                            onchange={handleAvailabilityChange}
+                                            message-toggle-active="Available"
+                                            message-toggle-inactive="Unavailable"
+                                            variant="label-hidden">
+                                        </lightning-input>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">
+                                            <template if:true={agent.Last_Assigned_Date__c}>
+                                                <lightning-formatted-date-time
+                                                    value={agent.Last_Assigned_Date__c}
+                                                    year="numeric"
+                                                    month="short"
+                                                    day="2-digit"
+                                                    hour="2-digit"
+                                                    minute="2-digit">
+                                                </lightning-formatted-date-time>
+                                            </template>
+                                            <template if:false={agent.Last_Assigned_Date__c}>
+                                                Never
+                                            </template>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <lightning-button-group>
+                                            <lightning-button-icon
+                                                icon-name="utility:arrowup"
+                                                alternative-text="Move Up"
+                                                data-id={agent.Id}
+                                                onclick={handleMoveUp}
+                                                disabled={agent.isFirst}>
+                                            </lightning-button-icon>
+                                            <lightning-button-icon
+                                                icon-name="utility:arrowdown"
+                                                alternative-text="Move Down"
+                                                data-id={agent.Id}
+                                                onclick={handleMoveDown}
+                                                disabled={agent.isLast}>
+                                            </lightning-button-icon>
+                                            <lightning-button-icon
+                                                icon-name="utility:delete"
+                                                alternative-text="Remove"
+                                                variant="destructive"
+                                                data-id={agent.Id}
+                                                onclick={handleRemove}>
+                                            </lightning-button-icon>
+                                        </lightning-button-group>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+
+                <template if:false={hasAgents}>
+                    <div class="slds-align_absolute-center slds-p-around_large">
+                        <p class="slds-text-body_regular slds-text-color_weak">
+                            No agents configured. Click "Add Agent" to get started.
+                        </p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+
+    <template if:true={showAddModal}>
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        alternative-text="Close"
+                        class="slds-modal__close"
+                        onclick={handleCloseAddModal}>
+                    </lightning-button-icon>
+                    <h2 class="slds-modal__title">Add Agent to Round Robin</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-record-picker
+                        label="Select User"
+                        placeholder="Search for a user..."
+                        object-api-name="User"
+                        onchange={handleUserSelected}>
+                    </lightning-record-picker>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" onclick={handleCloseAddModal}></lightning-button>
+                    <lightning-button
+                        label="Add"
+                        variant="brand"
+                        onclick={handleAddAgent}
+                        disabled={isAddDisabled}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
