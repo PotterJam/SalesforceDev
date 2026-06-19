@@ -1,0 +1,7 @@
+:host {
+    display: block;
+}
+
+.slds-modal__content {
+    overflow: visible;
+}
