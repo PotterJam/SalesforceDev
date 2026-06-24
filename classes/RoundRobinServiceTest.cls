@@ -65,9 +65,10 @@ private class RoundRobinServiceTest {
             Country = 'US',
             LeadSource = 'Web'
         );
+        insert testLead;
 
         Test.startTest();
-        insert testLead;
+        RoundRobinService.processLeadAssignments(new List<Id>{ testLead.Id });
         Test.stopTest();
 
         Lead insertedLead = [SELECT OwnerId FROM Lead WHERE Id = :testLead.Id];
@@ -105,9 +106,15 @@ private class RoundRobinServiceTest {
                 LeadSource = 'Web'
             ));
         }
+        insert leads;
+
+        List<Id> leadIds = new List<Id>();
+        for (Lead ld : leads) {
+            leadIds.add(ld.Id);
+        }
 
         Test.startTest();
-        insert leads;
+        RoundRobinService.processLeadAssignments(leadIds);
         Test.stopTest();
 
         Map<Id, Integer> assignmentCounts = new Map<Id, Integer>();
@@ -131,11 +138,12 @@ private class RoundRobinServiceTest {
             Country = 'DE',
             LeadSource = 'Other'
         );
+        insert testLead;
 
-        Id originalOwner = UserInfo.getUserId();
+        Id originalOwner = [SELECT OwnerId FROM Lead WHERE Id = :testLead.Id].OwnerId;
 
         Test.startTest();
-        insert testLead;
+        RoundRobinService.processLeadAssignments(new List<Id>{ testLead.Id });
         Test.stopTest();
 
         Lead insertedLead = [SELECT OwnerId FROM Lead WHERE Id = :testLead.Id];
@@ -156,9 +164,10 @@ private class RoundRobinServiceTest {
             LeadSource = 'Web',
             Rating = 'Hot'
         );
+        insert testLead;
 
         Test.startTest();
-        insert testLead;
+        RoundRobinService.processLeadAssignments(new List<Id>{ testLead.Id });
         Test.stopTest();
 
         Round_Robin_Group__c group2 = [SELECT Id FROM Round_Robin_Group__c WHERE Country_Criteria__c = 'UK'];
@@ -191,9 +200,10 @@ private class RoundRobinServiceTest {
             Country = 'FR',
             LeadSource = 'Event'
         );
+        insert testLead;
 
         Test.startTest();
-        insert testLead;
+        RoundRobinService.processLeadAssignments(new List<Id>{ testLead.Id });
         Test.stopTest();
 
         Lead insertedLead = [SELECT OwnerId FROM Lead WHERE Id = :testLead.Id];
@@ -222,9 +232,10 @@ private class RoundRobinServiceTest {
             Country = 'US',
             LeadSource = 'Web'
         );
+        insert testLead;
 
         Test.startTest();
-        insert testLead;
+        RoundRobinService.processLeadAssignments(new List<Id>{ testLead.Id });
         Test.stopTest();
 
         Lead insertedLead = [SELECT OwnerId FROM Lead WHERE Id = :testLead.Id];
@@ -253,9 +264,10 @@ private class RoundRobinServiceTest {
             Country = 'US',
             LeadSource = 'Web'
         );
+        insert testLead;
 
         Test.startTest();
-        insert testLead;
+        RoundRobinService.processLeadAssignments(new List<Id>{ testLead.Id });
         Test.stopTest();
 
         Lead insertedLead = [SELECT OwnerId FROM Lead WHERE Id = :testLead.Id];
@@ -285,17 +297,43 @@ private class RoundRobinServiceTest {
             Country = 'US',
             LeadSource = 'Web'
         );
+        insert testLead;
+
+        Id originalOwner = [SELECT OwnerId FROM Lead WHERE Id = :testLead.Id].OwnerId;
 
         Test.startTest();
-        insert testLead;
+        RoundRobinService.processLeadAssignments(new List<Id>{ testLead.Id });
         Test.stopTest();
 
         Lead insertedLead = [SELECT OwnerId FROM Lead WHERE Id = :testLead.Id];
-        System.assertEquals(UserInfo.getUserId(), insertedLead.OwnerId,
+        System.assertEquals(originalOwner, insertedLead.OwnerId,
             'Lead should keep default owner when no active members exist');
 
         List<Round_Robin_Log__c> logs = [SELECT Status__c FROM Round_Robin_Log__c WHERE Lead__c = :testLead.Id];
-        System.assert(!logs.isEmpty(), 'Log should be created even on skip/error');
+        System.assert(!logs.isEmpty(), 'Log should be created even on error');
+    }
+
+    @IsTest
+    static void testRecursionGuard() {
+        Lead testLead = new Lead(
+            FirstName = 'Recursion',
+            LastName = 'Guard',
+            Company = 'Recursion Co',
+            Country = 'US',
+            LeadSource = 'Web'
+        );
+        insert testLead;
+
+        RoundRobinService.isProcessing = true;
+
+        Test.startTest();
+        RoundRobinService.processLeadAssignments(new List<Id>{ testLead.Id });
+        Test.stopTest();
+
+        RoundRobinService.isProcessing = false;
+
+        List<Round_Robin_Log__c> logs = [SELECT Id FROM Round_Robin_Log__c WHERE Lead__c = :testLead.Id];
+        System.assertEquals(0, logs.size(), 'No assignment should occur when recursion guard is active');
     }
 
     @IsTest
@@ -310,9 +348,15 @@ private class RoundRobinServiceTest {
                 LeadSource = 'Web'
             ));
         }
+        insert leads;
+
+        List<Id> leadIds = new List<Id>();
+        for (Lead ld : leads) {
+            leadIds.add(ld.Id);
+        }
 
         Test.startTest();
-        insert leads;
+        RoundRobinService.processLeadAssignments(leadIds);
         Test.stopTest();
 
         List<Round_Robin_Log__c> logs = [SELECT Id FROM Round_Robin_Log__c WHERE Lead__c IN :leads];
