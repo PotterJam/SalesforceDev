@@ -28,8 +28,8 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Hello_World_Text</name>
-            <fieldType>DisplayText</fieldType>
             <fieldText>&lt;p&gt;Hello World&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
