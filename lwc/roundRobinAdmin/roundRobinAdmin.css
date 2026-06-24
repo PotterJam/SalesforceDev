@@ -1,0 +1,18 @@
+.group-item {
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.group-item:hover {
+    background-color: var(--slds-g-color-neutral-base-95, #f3f3f3);
+}
+
+.slds-badge_success {
+    background-color: var(--slds-g-color-success-base-40, #2e844a);
+    color: #fff;
+}
+
+.slds-badge_error {
+    background-color: var(--slds-g-color-error-base-40, #c23934);
+    color: #fff;
+}
