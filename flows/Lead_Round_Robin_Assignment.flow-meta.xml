@@ -17,6 +17,7 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Log_Fault</name>
         <label>Log Fault</label>
@@ -30,7 +31,6 @@
             </value>
         </assignmentItems>
     </assignments>
-    <apiVersion>59.0</apiVersion>
     <description>After-save Record-Triggered Flow that invokes the RoundRobinInvocable Apex class to perform round-robin Lead assignment based on configured groups and eligibility criteria. Fires only on Lead creation to avoid recursion from the OwnerId update.</description>
     <environments>Default</environments>
     <interviewLabel>Lead Round Robin Assignment {!$Flow.CurrentDateTime}</interviewLabel>
