@@ -106,7 +106,7 @@
             <targetReference>Check_Stage</targetReference>
         </connector>
         <object>Fundraising_Gift__c</object>
-        <recordTriggerType>CreateAndAllUpdates</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
