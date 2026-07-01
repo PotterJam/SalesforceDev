@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>Set_Received_Defaults</name>
+        <label>Set Received Defaults</label>
+        <locationX>176</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Received_Amount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_Received_Amount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Gift_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_Gift_Date</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Acknowledgment_Sent</name>
+        <label>Set Acknowledgment Sent</label>
+        <locationX>440</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Acknowledgment_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Sent</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_Stage</name>
+        <label>Check Stage</label>
+        <locationX>308</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Other Stage</defaultConnectorLabel>
+        <rules>
+            <name>Stage_Is_Received</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Received</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Received_Defaults</targetReference>
+            </connector>
+            <label>Stage Is Received</label>
+        </rules>
+        <rules>
+            <name>Stage_Is_Thanked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Thanked</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Acknowledgment_Sent</targetReference>
+            </connector>
+            <label>Stage Is Thanked</label>
+        </rules>
+    </decisions>
+    <description>Automates field updates on Fundraising Gift records when the Stage transitions. Sets Received Amount and Gift Date when stage moves to Received, and updates Acknowledgment Status when stage moves to Thanked.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>formula_Received_Amount</name>
+        <dataType>Currency</dataType>
+        <expression>IF(ISBLANK({!$Record.Received_Amount__c}), {!$Record.Amount__c}, {!$Record.Received_Amount__c})</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>formula_Gift_Date</name>
+        <dataType>Date</dataType>
+        <expression>IF(ISBLANK({!$Record.Gift_Date__c}), {!$Flow.CurrentDate}, {!$Record.Gift_Date__c})</expression>
+    </formulas>
+    <interviewLabel>Fundraising Gift Auto Process {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Fundraising Gift Auto Process</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Stage</targetReference>
+        </connector>
+        <object>Fundraising_Gift__c</object>
+        <recordTriggerType>CreateAndAllUpdates</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
