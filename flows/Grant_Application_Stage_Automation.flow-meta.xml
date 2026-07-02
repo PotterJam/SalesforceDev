@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
-    <description>When a Grant Application Stage changes to Submitted, automatically sets Submission_Date__c to today if blank.</description>
-    <environments>Default</environments>
-    <interviewLabel>Grant Application Stage Automation {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Grant Application Stage Automation</label>
-    <processMetadataValues>
-        <name>BuilderType</name>
-        <value>
-            <stringValue>LightningFlowBuilder</stringValue>
-        </value>
-    </processMetadataValues>
-    <processMetadataValues>
-        <name>CanvasMode</name>
-        <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
-        </value>
-    </processMetadataValues>
-    <processType>AutoLaunchedFlow</processType>
     <decisions>
         <name>Check_Stage_Is_Submitted</name>
         <label>Check Stage Is Submitted</label>
@@ -47,6 +30,23 @@
             <label>Stage Is Submitted</label>
         </rules>
     </decisions>
+    <description>When a Grant Application Stage changes to Submitted, automatically sets Submission_Date__c to today if blank.</description>
+    <environments>Default</environments>
+    <interviewLabel>Grant Application Stage Automation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Grant Application Stage Automation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
         <name>Set_Submission_Date</name>
         <label>Set Submission Date</label>
