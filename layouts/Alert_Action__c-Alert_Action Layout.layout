@@ -34,6 +34,10 @@
                 <behavior>Edit</behavior>
                 <field>Margin__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Ghost_Field__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
