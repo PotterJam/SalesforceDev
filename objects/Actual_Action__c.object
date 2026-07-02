@@ -6491,26 +6491,8 @@
         <label>Actual Action Name</label>
         <type>Text</type>
     </nameField>
-    <fields>
-        <fullName>BrokenTextLength__c</fullName>
-        <externalId>false</externalId>
-        <label>Broken Text Length</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <length>500</length>
-        <required>false</required>
-        <unique>false</unique>
-    </fields>
     <pluralLabel>Actual Actions</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
-    <validationRules>
-        <fullName>BrokenValidationRule</fullName>
-        <active>true</active>
-        <description>Deliberately references a field that does not exist so this rule fails Metadata API validation.</description>
-        <errorConditionFormula>ISBLANK(NonExistent_Field__c)</errorConditionFormula>
-        <errorMessage>NonExistent field reference for UX validation testing.</errorMessage>
-    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>
