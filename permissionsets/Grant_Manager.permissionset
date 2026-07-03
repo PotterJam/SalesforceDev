@@ -32,11 +32,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Grant_Funder__c.Funder_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Grant_Funder__c.Notes__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -97,11 +92,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Grant_Opportunity__c.Opportunity_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Grant_Opportunity__c.Priority__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -118,11 +108,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Grant_Application__c.Amount_Requested__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Grant_Application__c.Application_Title__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -197,11 +182,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Grant_Award__c.Award_Title__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Grant_Award__c.End_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -253,11 +233,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Grant_Milestone__c.Due_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Grant_Milestone__c.Milestone_Title__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -323,11 +298,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Grant_Report__c.Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Grant_Report__c.Report_Title__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
