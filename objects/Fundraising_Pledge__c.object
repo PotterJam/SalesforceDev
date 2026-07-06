@@ -346,14 +346,6 @@
         <type>LongTextArea</type>
         <visibleLines>5</visibleLines>
     </fields>
-    <validationRules>
-        <fullName>Pledge_End_Date_After_Start</fullName>
-        <active>true</active>
-        <description>Ensures the pledge end date is not before the start date.</description>
-        <errorConditionFormula>AND(NOT(ISBLANK(End_Date__c)), NOT(ISBLANK(Start_Date__c)), End_Date__c &lt; Start_Date__c)</errorConditionFormula>
-        <errorDisplayField>End_Date__c</errorDisplayField>
-        <errorMessage>End Date must be on or after Start Date.</errorMessage>
-    </validationRules>
     <label>Fundraising Pledge</label>
     <nameField>
         <label>Pledge Name</label>
@@ -362,5 +354,13 @@
     <pluralLabel>Fundraising Pledges</pluralLabel>
     <searchLayouts/>
     <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Pledge_End_Date_After_Start</fullName>
+        <active>true</active>
+        <description>Ensures the pledge end date is not before the start date.</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(End_Date__c)), NOT(ISBLANK(Start_Date__c)), End_Date__c &lt; Start_Date__c)</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>End Date must be on or after Start Date.</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

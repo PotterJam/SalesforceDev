@@ -301,14 +301,6 @@
         <trackTrending>false</trackTrending>
         <type>Percent</type>
     </fields>
-    <validationRules>
-        <fullName>Campaign_End_Date_After_Start</fullName>
-        <active>true</active>
-        <description>Ensures the campaign end date is not before the start date.</description>
-        <errorConditionFormula>AND(NOT(ISBLANK(End_Date__c)), NOT(ISBLANK(Start_Date__c)), End_Date__c &lt; Start_Date__c)</errorConditionFormula>
-        <errorDisplayField>End_Date__c</errorDisplayField>
-        <errorMessage>End Date must be on or after Start Date.</errorMessage>
-    </validationRules>
     <label>Fundraising Campaign</label>
     <nameField>
         <label>Campaign Name</label>
@@ -317,5 +309,13 @@
     <pluralLabel>Fundraising Campaigns</pluralLabel>
     <searchLayouts/>
     <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Campaign_End_Date_After_Start</fullName>
+        <active>true</active>
+        <description>Ensures the campaign end date is not before the start date.</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(End_Date__c)), NOT(ISBLANK(Start_Date__c)), End_Date__c &lt; Start_Date__c)</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>End Date must be on or after Start Date.</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

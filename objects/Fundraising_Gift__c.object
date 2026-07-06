@@ -372,14 +372,6 @@
         <type>LongTextArea</type>
         <visibleLines>5</visibleLines>
     </fields>
-    <validationRules>
-        <fullName>Gift_Tax_Deductible_Within_Amount</fullName>
-        <active>true</active>
-        <description>Ensures the tax deductible amount does not exceed the total gift amount.</description>
-        <errorConditionFormula>AND(NOT(ISBLANK(Tax_Deductible_Amount__c)), NOT(ISBLANK(Amount__c)), Tax_Deductible_Amount__c &gt; Amount__c)</errorConditionFormula>
-        <errorDisplayField>Tax_Deductible_Amount__c</errorDisplayField>
-        <errorMessage>Tax Deductible Amount cannot exceed the Gift Amount.</errorMessage>
-    </validationRules>
     <label>Fundraising Gift</label>
     <nameField>
         <label>Gift Name</label>
@@ -388,5 +380,13 @@
     <pluralLabel>Fundraising Gifts</pluralLabel>
     <searchLayouts/>
     <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Gift_Tax_Deductible_Within_Amount</fullName>
+        <active>true</active>
+        <description>Ensures the tax deductible amount does not exceed the total gift amount.</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(Tax_Deductible_Amount__c)), NOT(ISBLANK(Amount__c)), Tax_Deductible_Amount__c &gt; Amount__c)</errorConditionFormula>
+        <errorDisplayField>Tax_Deductible_Amount__c</errorDisplayField>
+        <errorMessage>Tax Deductible Amount cannot exceed the Gift Amount.</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>
