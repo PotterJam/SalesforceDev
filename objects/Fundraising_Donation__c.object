@@ -201,10 +201,10 @@
         <label>Designation</label>
         <length>255</length>
         <required>false</required>
-        <unique>false</unique>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Donation_Date__c</fullName>
@@ -250,10 +250,10 @@
         <inlineHelpText>Enter any additional notes or context about this donation.</inlineHelpText>
         <label>Notes</label>
         <length>32768</length>
-        <visibleLines>5</visibleLines>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
     </fields>
     <fields>
         <fullName>Payment_Method__c</fullName>
