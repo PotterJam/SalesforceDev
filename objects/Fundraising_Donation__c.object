@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Tracks individual fundraising donations through the pipeline from prospect to acknowledgement.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Acknowledgement_Date__c</fullName>
+        <description>The date on which the donor was thanked and the donation was formally acknowledged.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date this donation was acknowledged to the donor.</inlineHelpText>
+        <label>Acknowledgement Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+        <required>false</required>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <description>The monetary value of this donation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the donation amount.</inlineHelpText>
+        <label>Amount</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <description>The fundraising campaign that this donation is associated with.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the campaign this donation is linked to.</inlineHelpText>
+        <label>Campaign</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Fundraising Donations</relationshipLabel>
+        <relationshipName>Fundraising_Donations</relationshipName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <required>false</required>
+    </fields>
+    <fields>
+        <fullName>Designation__c</fullName>
+        <description>Specifies how or where the donated funds should be used or directed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the fund or purpose this donation is designated for.</inlineHelpText>
+        <label>Designation</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <length>255</length>
+        <required>false</required>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Donation_Date__c</fullName>
+        <description>The date the donation was received, or is expected to be received.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date this donation was or is expected to be received.</inlineHelpText>
+        <label>Donation Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+        <required>false</required>
+    </fields>
+    <fields>
+        <fullName>Donor__c</fullName>
+        <description>The Account record representing the donor for this donation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the account (donor) this donation is from.</inlineHelpText>
+        <label>Donor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Fundraising Donations</relationshipLabel>
+        <relationshipName>Fundraising_Donations</relationshipName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <required>false</required>
+    </fields>
+    <fields>
+        <fullName>Is_Recurring__c</fullName>
+        <description>Indicates whether this donation is part of a recurring giving arrangement.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box if this is a recurring gift.</inlineHelpText>
+        <label>Is Recurring</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+        <defaultValue>false</defaultValue>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>Free-text area for capturing additional context, special instructions, or background information about this donation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any additional notes or context about this donation.</inlineHelpText>
+        <label>Notes</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Payment_Method__c</fullName>
+        <description>The method by which the donation was or will be made.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the payment method for this donation.</inlineHelpText>
+        <label>Payment Method</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>false</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cash</fullName>
+                    <default>false</default>
+                    <label>Cash</label>
+                </value>
+                <value>
+                    <fullName>Check</fullName>
+                    <default>false</default>
+                    <label>Check</label>
+                </value>
+                <value>
+                    <fullName>Credit Card</fullName>
+                    <default>false</default>
+                    <label>Credit Card</label>
+                </value>
+                <value>
+                    <fullName>Wire Transfer</fullName>
+                    <default>false</default>
+                    <label>Wire Transfer</label>
+                </value>
+                <value>
+                    <fullName>Online</fullName>
+                    <default>false</default>
+                    <label>Online</label>
+                </value>
+                <value>
+                    <fullName>In-Kind</fullName>
+                    <default>false</default>
+                    <label>In-Kind</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <required>false</required>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <description>The current stage of this donation in the fundraising pipeline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the current pipeline stage for this donation.</inlineHelpText>
+        <label>Stage</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Prospect</fullName>
+                    <default>true</default>
+                    <label>Prospect</label>
+                </value>
+                <value>
+                    <fullName>Solicitation</fullName>
+                    <default>false</default>
+                    <label>Solicitation</label>
+                </value>
+                <value>
+                    <fullName>Pledged</fullName>
+                    <default>false</default>
+                    <label>Pledged</label>
+                </value>
+                <value>
+                    <fullName>Received</fullName>
+                    <default>false</default>
+                    <label>Received</label>
+                </value>
+                <value>
+                    <fullName>Acknowledged</fullName>
+                    <default>false</default>
+                    <label>Acknowledged</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <required>false</required>
+    </fields>
+    <label>Fundraising Donation</label>
+    <nameField>
+        <displayFormat>DN-{00000}</displayFormat>
+        <label>Donation Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Fundraising Donations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
