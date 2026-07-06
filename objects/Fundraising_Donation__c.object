@@ -160,10 +160,10 @@
         <externalId>false</externalId>
         <inlineHelpText>Enter the date this donation was acknowledged to the donor.</inlineHelpText>
         <label>Acknowledgement Date</label>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-        <required>false</required>
     </fields>
     <fields>
         <fullName>Amount__c</fullName>
@@ -171,27 +171,27 @@
         <externalId>false</externalId>
         <inlineHelpText>Enter the donation amount.</inlineHelpText>
         <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-        <precision>18</precision>
-        <scale>2</scale>
-        <required>false</required>
     </fields>
     <fields>
         <fullName>Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>The fundraising campaign that this donation is associated with.</description>
         <externalId>false</externalId>
         <inlineHelpText>Select the campaign this donation is linked to.</inlineHelpText>
         <label>Campaign</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
         <referenceTo>Campaign</referenceTo>
         <relationshipLabel>Fundraising Donations</relationshipLabel>
         <relationshipName>Fundraising_Donations</relationshipName>
-        <deleteConstraint>SetNull</deleteConstraint>
         <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Designation__c</fullName>
@@ -199,12 +199,12 @@
         <externalId>false</externalId>
         <inlineHelpText>Enter the fund or purpose this donation is designated for.</inlineHelpText>
         <label>Designation</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
         <length>255</length>
         <required>false</required>
         <unique>false</unique>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
     </fields>
     <fields>
         <fullName>Donation_Date__c</fullName>
@@ -212,28 +212,29 @@
         <externalId>false</externalId>
         <inlineHelpText>Enter the date this donation was or is expected to be received.</inlineHelpText>
         <label>Donation Date</label>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-        <required>false</required>
     </fields>
     <fields>
         <fullName>Donor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>The Account record representing the donor for this donation.</description>
         <externalId>false</externalId>
         <inlineHelpText>Select the account (donor) this donation is from.</inlineHelpText>
         <label>Donor</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Fundraising Donations</relationshipLabel>
         <relationshipName>Fundraising_Donations</relationshipName>
-        <deleteConstraint>SetNull</deleteConstraint>
         <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Is_Recurring__c</fullName>
+        <defaultValue>false</defaultValue>
         <description>Indicates whether this donation is part of a recurring giving arrangement.</description>
         <externalId>false</externalId>
         <inlineHelpText>Check this box if this is a recurring gift.</inlineHelpText>
@@ -241,7 +242,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-        <defaultValue>false</defaultValue>
     </fields>
     <fields>
         <fullName>Notes__c</fullName>
@@ -249,11 +249,11 @@
         <externalId>false</externalId>
         <inlineHelpText>Enter any additional notes or context about this donation.</inlineHelpText>
         <label>Notes</label>
+        <length>32768</length>
+        <visibleLines>5</visibleLines>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
-        <length>32768</length>
-        <visibleLines>5</visibleLines>
     </fields>
     <fields>
         <fullName>Payment_Method__c</fullName>
@@ -261,6 +261,7 @@
         <externalId>false</externalId>
         <inlineHelpText>Select the payment method for this donation.</inlineHelpText>
         <label>Payment Method</label>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -300,7 +301,6 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <required>false</required>
     </fields>
     <fields>
         <fullName>Stage__c</fullName>
@@ -308,6 +308,7 @@
         <externalId>false</externalId>
         <inlineHelpText>Select the current pipeline stage for this donation.</inlineHelpText>
         <label>Stage</label>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -342,7 +343,6 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <required>false</required>
     </fields>
     <label>Fundraising Donation</label>
     <nameField>
