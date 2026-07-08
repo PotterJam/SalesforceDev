@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Utility bar for the Fundraising Pipeline application.</description>
     <flexiPageRegions>
-        <name>UtilityBar</name>
+        <name>utilityItems</name>
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Fundraising Pipeline UtilityBar</masterLabel>
     <template>
-        <name>uitk:utilityBarTemplate</name>
+        <name>one:utilityBarTemplateDesktop</name>
     </template>
     <type>UtilityBar</type>
 </FlexiPage>
