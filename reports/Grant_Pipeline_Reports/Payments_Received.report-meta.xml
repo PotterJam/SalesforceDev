@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Grant_Payment__c.Award__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Payment__c.Amount__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Payment__c.Payment_Date__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Payment__c.Payment_Type__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Payment__c.Reference_Number__c</field>
+    </columns>
+    <description>All received grant payments with amounts and dates.</description>
+    <filter>
+        <criteriaItems>
+            <column>Grant_Payment__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Received</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>Grant_Payment__c.Payment_Date__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>Payments Received</name>
+    <reportType>CustomEntity$Grant_Payment__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Grant_Payment__c.Payment_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
