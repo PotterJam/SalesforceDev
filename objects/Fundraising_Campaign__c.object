@@ -159,10 +159,10 @@
         <externalId>false</externalId>
         <inlineHelpText>Enter the expected close date for this funding round.</inlineHelpText>
         <label>Close Date</label>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-        <required>false</required>
     </fields>
     <fields>
         <fullName>Description__c</fullName>
@@ -170,10 +170,10 @@
         <externalId>false</externalId>
         <inlineHelpText>Describe the goals, context, and key details of this funding round.</inlineHelpText>
         <label>Description</label>
+        <length>32768</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
-        <length>32768</length>
         <visibleLines>5</visibleLines>
     </fields>
     <fields>
@@ -182,12 +182,12 @@
         <externalId>false</externalId>
         <inlineHelpText>Enter the target number of investors for this round.</inlineHelpText>
         <label>Investor Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
-        <precision>18</precision>
-        <scale>0</scale>
-        <required>false</required>
         <unique>false</unique>
     </fields>
     <fields>
@@ -196,11 +196,11 @@
         <externalId>false</externalId>
         <inlineHelpText>Enter the name of the lead investor or firm.</inlineHelpText>
         <label>Lead Investor</label>
+        <length>255</length>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
-        <length>255</length>
-        <required>false</required>
         <unique>false</unique>
     </fields>
     <fields>
@@ -209,12 +209,12 @@
         <externalId>false</externalId>
         <inlineHelpText>Enter the total amount raised so far in this round.</inlineHelpText>
         <label>Raised Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-        <precision>18</precision>
-        <scale>2</scale>
-        <required>false</required>
     </fields>
     <fields>
         <fullName>StartDate__c</fullName>
@@ -222,10 +222,10 @@
         <externalId>false</externalId>
         <inlineHelpText>Enter the date this funding round was opened.</inlineHelpText>
         <label>Start Date</label>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-        <required>false</required>
     </fields>
     <fields>
         <fullName>Status__c</fullName>
@@ -269,12 +269,12 @@
         <externalId>false</externalId>
         <inlineHelpText>Enter the total amount you are seeking to raise in this round.</inlineHelpText>
         <label>Target Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-        <precision>18</precision>
-        <scale>2</scale>
-        <required>false</required>
     </fields>
     <fields>
         <fullName>Type__c</fullName>
