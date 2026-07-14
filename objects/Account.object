@@ -500,6 +500,12 @@
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <validationRules>
+        <fullName>Account_Name_Must_Start_With_FISH</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(BEGINS(Name, "FISH"))</errorConditionFormula>
+        <errorMessage>Account Name must start with FISH.</errorMessage>
+    </validationRules>
     <listViews>
         <fullName>AllAccounts</fullName>
         <filterScope>Everything</filterScope>
