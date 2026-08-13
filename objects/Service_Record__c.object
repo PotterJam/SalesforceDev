@@ -278,6 +278,7 @@
     </fields>
     <fields>
         <fullName>Warranty_Covered__c</fullName>
+        <defaultValue>false</defaultValue>
         <description>Whether this service is covered under the vehicle's warranty.</description>
         <externalId>false</externalId>
         <inlineHelpText>Check if this service is covered by warranty.</inlineHelpText>
@@ -285,7 +286,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-        <defaultValue>false</defaultValue>
     </fields>
     <fields>
         <fullName>Status__c</fullName>

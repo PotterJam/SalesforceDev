@@ -325,6 +325,7 @@
     </fields>
     <fields>
         <fullName>Follow_Up_Required__c</fullName>
+        <defaultValue>false</defaultValue>
         <description>Whether a follow-up action is needed after this test drive.</description>
         <externalId>false</externalId>
         <inlineHelpText>Check if follow-up is required after this test drive.</inlineHelpText>
@@ -332,7 +333,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-        <defaultValue>false</defaultValue>
     </fields>
     <fields>
         <fullName>Follow_Up_Notes__c</fullName>
