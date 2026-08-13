@@ -282,10 +282,10 @@
         <externalId>false</externalId>
         <inlineHelpText>Check if this service is covered by warranty.</inlineHelpText>
         <label>Warranty Covered</label>
-        <defaultValue>false</defaultValue>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+        <defaultValue>false</defaultValue>
     </fields>
     <fields>
         <fullName>Status__c</fullName>
