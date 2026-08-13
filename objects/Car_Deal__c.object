@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The central deal record tracking a vehicle sale from initial inquiry through delivery or loss, linking to the vehicle, customer, trade-in, and financing records.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Vehicle__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The vehicle being sold in this deal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the vehicle for this deal.</inlineHelpText>
+        <label>Vehicle</label>
+        <referenceTo>Vehicle__c</referenceTo>
+        <relationshipLabel>Car Deals</relationshipLabel>
+        <relationshipName>Car_Deals</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The customer involved in this deal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the customer for this deal.</inlineHelpText>
+        <label>Customer</label>
+        <referenceTo>Customer__c</referenceTo>
+        <relationshipLabel>Car Deals</relationshipLabel>
+        <relationshipName>Car_Deals</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <description>The current stage of the deal in the sales pipeline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the current deal stage.</inlineHelpText>
+        <label>Stage</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Inquiry</fullName>
+                    <default>true</default>
+                    <label>Inquiry</label>
+                </value>
+                <value>
+                    <fullName>Test Drive</fullName>
+                    <default>false</default>
+                    <label>Test Drive</label>
+                </value>
+                <value>
+                    <fullName>Negotiation</fullName>
+                    <default>false</default>
+                    <label>Negotiation</label>
+                </value>
+                <value>
+                    <fullName>Finance Application</fullName>
+                    <default>false</default>
+                    <label>Finance Application</label>
+                </value>
+                <value>
+                    <fullName>Finance Approved</fullName>
+                    <default>false</default>
+                    <label>Finance Approved</label>
+                </value>
+                <value>
+                    <fullName>Contract Signing</fullName>
+                    <default>false</default>
+                    <label>Contract Signing</label>
+                </value>
+                <value>
+                    <fullName>Delivered</fullName>
+                    <default>false</default>
+                    <label>Delivered</label>
+                </value>
+                <value>
+                    <fullName>Closed Lost</fullName>
+                    <default>false</default>
+                    <label>Closed Lost</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Deal_Amount__c</fullName>
+        <description>The final agreed sale price for the vehicle.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the final agreed sale price.</inlineHelpText>
+        <label>Deal Amount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Down_Payment__c</fullName>
+        <description>The amount of cash the customer is putting down upfront.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the customer's down payment amount.</inlineHelpText>
+        <label>Down Payment</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Trade_In_Allowance__c</fullName>
+        <description>The value being applied from the customer's trade-in vehicle toward this deal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the trade-in allowance applied to this deal.</inlineHelpText>
+        <label>Trade-In Allowance</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Amount__c</fullName>
+        <description>The net amount owed after subtracting down payment and trade-in allowance from the deal amount.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Net amount owed (Deal Amount minus Down Payment minus Trade-In Allowance).</inlineHelpText>
+        <label>Net Amount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Rep__c</fullName>
+        <description>The name of the sales representative managing this deal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the sales rep assigned to this deal.</inlineHelpText>
+        <label>Sales Rep</label>
+        <length>255</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deal_Date__c</fullName>
+        <description>The date this deal was first opened.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date the deal was opened.</inlineHelpText>
+        <label>Deal Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Close_Date__c</fullName>
+        <description>The date the deal was closed, whether won (delivered) or lost.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the deal was closed.</inlineHelpText>
+        <label>Close Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Lost_Reason__c</fullName>
+        <description>The reason the deal was lost, if applicable.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If the deal was lost, enter the reason.</inlineHelpText>
+        <label>Lost Reason</label>
+        <length>255</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gross_Profit__c</fullName>
+        <description>The gross profit on this deal (sale price minus dealership cost).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the gross profit for this deal.</inlineHelpText>
+        <label>Gross Profit</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Days_In_Pipeline__c</fullName>
+        <description>The number of days this deal has been in the pipeline since it was opened.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of days since the deal was opened.</inlineHelpText>
+        <label>Days In Pipeline</label>
+        <precision>10</precision>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>Free-text notes about this deal, negotiations, or special conditions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Add any notes about this deal.</inlineHelpText>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <label>Car Deal</label>
+    <nameField>
+        <displayFormat>CDL-{00000}</displayFormat>
+        <label>Deal Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Car Deals</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
