@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Tracks vehicles a customer is trading in as part of a car deal, including appraisal values, condition, and any outstanding payoff amounts.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Car_Deal__c</fullName>
+        <description>The car deal this trade-in is associated with.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent car deal for this trade-in.</inlineHelpText>
+        <label>Car Deal</label>
+        <referenceTo>Car_Deal__c</referenceTo>
+        <relationshipLabel>Trade-Ins</relationshipLabel>
+        <relationshipName>Trade_Ins</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Trade_VIN__c</fullName>
+        <description>The VIN of the vehicle being traded in.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the 17-character VIN of the trade-in vehicle.</inlineHelpText>
+        <label>Trade VIN</label>
+        <length>17</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trade_Make__c</fullName>
+        <description>The manufacturer of the trade-in vehicle.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the make of the trade-in vehicle.</inlineHelpText>
+        <label>Trade Make</label>
+        <length>100</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trade_Model__c</fullName>
+        <description>The model of the trade-in vehicle.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the model of the trade-in vehicle.</inlineHelpText>
+        <label>Trade Model</label>
+        <length>100</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trade_Year__c</fullName>
+        <description>The model year of the trade-in vehicle.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the model year of the trade-in vehicle.</inlineHelpText>
+        <label>Trade Year</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trade_Mileage__c</fullName>
+        <description>The odometer reading of the trade-in vehicle at time of appraisal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the current mileage of the trade-in vehicle.</inlineHelpText>
+        <label>Trade Mileage</label>
+        <precision>10</precision>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trade_Condition__c</fullName>
+        <description>The overall condition of the trade-in vehicle as assessed during appraisal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the condition of the trade-in vehicle.</inlineHelpText>
+        <label>Trade Condition</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Excellent</fullName>
+                    <default>false</default>
+                    <label>Excellent</label>
+                </value>
+                <value>
+                    <fullName>Good</fullName>
+                    <default>true</default>
+                    <label>Good</label>
+                </value>
+                <value>
+                    <fullName>Fair</fullName>
+                    <default>false</default>
+                    <label>Fair</label>
+                </value>
+                <value>
+                    <fullName>Poor</fullName>
+                    <default>false</default>
+                    <label>Poor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Estimated_Value__c</fullName>
+        <description>The estimated market value of the trade-in (e.g. from a pricing guide).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the estimated market value (e.g. KBB value).</inlineHelpText>
+        <label>Estimated Value</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Appraised_Value__c</fullName>
+        <description>The dealership's appraised value of the trade-in vehicle after inspection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the dealership's appraised value.</inlineHelpText>
+        <label>Appraised Value</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Offered_Value__c</fullName>
+        <description>The value offered to the customer for the trade-in.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the amount offered to the customer.</inlineHelpText>
+        <label>Offered Value</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_Amount__c</fullName>
+        <description>The remaining loan balance owed on the trade-in vehicle, if any.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the remaining payoff amount owed on the trade-in.</inlineHelpText>
+        <label>Payoff Amount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Trade_Equity__c</fullName>
+        <description>The net equity in the trade-in (Offered Value minus Payoff Amount).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Net equity (Offered Value minus Payoff Amount).</inlineHelpText>
+        <label>Net Trade Equity</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Appraisal_Date__c</fullName>
+        <description>The date the trade-in vehicle was appraised.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date the appraisal was completed.</inlineHelpText>
+        <label>Appraisal Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Trade-In</label>
+    <nameField>
+        <displayFormat>TRD-{00000}</displayFormat>
+        <label>Trade-In Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Trade-Ins</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
