@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Tracks test drive appointments and results, including scheduling, customer feedback, and follow-up actions for the car sales pipeline.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Vehicle__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The vehicle the customer is test driving.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the vehicle for this test drive.</inlineHelpText>
+        <label>Vehicle</label>
+        <referenceTo>Vehicle__c</referenceTo>
+        <relationshipLabel>Test Drives</relationshipLabel>
+        <relationshipName>Test_Drives</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The customer taking the test drive.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the customer for this test drive.</inlineHelpText>
+        <label>Customer</label>
+        <referenceTo>Customer__c</referenceTo>
+        <relationshipLabel>Test Drives</relationshipLabel>
+        <relationshipName>Test_Drives</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Date__c</fullName>
+        <description>The date and time the test drive is scheduled for.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the scheduled date and time for the test drive.</inlineHelpText>
+        <label>Scheduled Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <description>The date and time the test drive was actually completed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date and time the test drive was completed.</inlineHelpText>
+        <label>Completed Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>The current status of this test drive appointment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the status of this test drive.</inlineHelpText>
+        <label>Status</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Scheduled</fullName>
+                    <default>true</default>
+                    <label>Scheduled</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>No Show</fullName>
+                    <default>false</default>
+                    <label>No Show</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Duration_Minutes__c</fullName>
+        <description>The duration of the test drive in minutes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the test drive duration in minutes.</inlineHelpText>
+        <label>Duration Minutes</label>
+        <precision>5</precision>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Route__c</fullName>
+        <description>The planned or actual route taken during the test drive.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the route description (e.g. Highway Loop, City Route).</inlineHelpText>
+        <label>Route</label>
+        <length>255</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Rep__c</fullName>
+        <description>The sales representative who accompanied the test drive.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the name of the sales rep for this test drive.</inlineHelpText>
+        <label>Sales Rep</label>
+        <length>255</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Feedback__c</fullName>
+        <description>Customer's comments and feedback after the test drive.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Record the customer's feedback after the test drive.</inlineHelpText>
+        <label>Customer Feedback</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Interest_Level__c</fullName>
+        <description>The customer's level of interest in the vehicle after the test drive.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the customer's interest level after the drive.</inlineHelpText>
+        <label>Interest Level</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Not Interested</fullName>
+                    <default>false</default>
+                    <label>Not Interested</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Required__c</fullName>
+        <description>Whether a follow-up action is needed after this test drive.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check if follow-up is required after this test drive.</inlineHelpText>
+        <label>Follow-Up Required</label>
+        <defaultValue>false</defaultValue>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Notes__c</fullName>
+        <description>Notes about the follow-up actions required after the test drive.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Add notes about what follow-up is needed.</inlineHelpText>
+        <label>Follow-Up Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <label>Test Drive</label>
+    <nameField>
+        <displayFormat>TD-{00000}</displayFormat>
+        <label>Test Drive Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Test Drives</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

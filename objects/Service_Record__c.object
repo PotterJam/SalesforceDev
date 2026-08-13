@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Tracks after-sale service and maintenance records for vehicles sold through the dealership, including warranty coverage and customer satisfaction.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Vehicle__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The vehicle being serviced.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the vehicle being serviced.</inlineHelpText>
+        <label>Vehicle</label>
+        <referenceTo>Vehicle__c</referenceTo>
+        <relationshipLabel>Service Records</relationshipLabel>
+        <relationshipName>Service_Records</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The customer who owns the vehicle being serviced.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the vehicle owner.</inlineHelpText>
+        <label>Customer</label>
+        <referenceTo>Customer__c</referenceTo>
+        <relationshipLabel>Service Records</relationshipLabel>
+        <relationshipName>Service_Records</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Service_Date__c</fullName>
+        <description>The date the service was performed or is scheduled.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the service date.</inlineHelpText>
+        <label>Service Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_Type__c</fullName>
+        <description>The category of service being performed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the type of service.</inlineHelpText>
+        <label>Service Type</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Oil Change</fullName>
+                    <default>false</default>
+                    <label>Oil Change</label>
+                </value>
+                <value>
+                    <fullName>Tire Rotation</fullName>
+                    <default>false</default>
+                    <label>Tire Rotation</label>
+                </value>
+                <value>
+                    <fullName>Brake Service</fullName>
+                    <default>false</default>
+                    <label>Brake Service</label>
+                </value>
+                <value>
+                    <fullName>Recall</fullName>
+                    <default>false</default>
+                    <label>Recall</label>
+                </value>
+                <value>
+                    <fullName>Warranty Repair</fullName>
+                    <default>false</default>
+                    <label>Warranty Repair</label>
+                </value>
+                <value>
+                    <fullName>General Maintenance</fullName>
+                    <default>true</default>
+                    <label>General Maintenance</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Detailed description of the service work performed or needed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the service work in detail.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mileage_At_Service__c</fullName>
+        <description>The vehicle's odometer reading at the time of service.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the mileage at the time of service.</inlineHelpText>
+        <label>Mileage At Service</label>
+        <precision>10</precision>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cost__c</fullName>
+        <description>The cost of the service to the customer.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the cost of this service.</inlineHelpText>
+        <label>Cost</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Covered__c</fullName>
+        <description>Whether this service is covered under the vehicle's warranty.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check if this service is covered by warranty.</inlineHelpText>
+        <label>Warranty Covered</label>
+        <defaultValue>false</defaultValue>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>The current status of this service appointment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the current service status.</inlineHelpText>
+        <label>Status</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Scheduled</fullName>
+                    <default>true</default>
+                    <label>Scheduled</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Technician__c</fullName>
+        <description>The technician assigned to perform this service.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the technician's name.</inlineHelpText>
+        <label>Technician</label>
+        <length>255</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Service_Due__c</fullName>
+        <description>The date the next service is recommended or due.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date for the next recommended service.</inlineHelpText>
+        <label>Next Service Due</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Satisfaction_Rating__c</fullName>
+        <description>The customer's satisfaction rating for this service visit.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the customer's satisfaction rating.</inlineHelpText>
+        <label>Satisfaction Rating</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5 - Excellent</fullName>
+                    <default>false</default>
+                    <label>5 - Excellent</label>
+                </value>
+                <value>
+                    <fullName>4 - Good</fullName>
+                    <default>false</default>
+                    <label>4 - Good</label>
+                </value>
+                <value>
+                    <fullName>3 - Average</fullName>
+                    <default>false</default>
+                    <label>3 - Average</label>
+                </value>
+                <value>
+                    <fullName>2 - Below Average</fullName>
+                    <default>false</default>
+                    <label>2 - Below Average</label>
+                </value>
+                <value>
+                    <fullName>1 - Poor</fullName>
+                    <default>false</default>
+                    <label>1 - Poor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>Additional notes about this service visit.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Add any additional notes about this service.</inlineHelpText>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <label>Service Record</label>
+    <nameField>
+        <displayFormat>SVC-{00000}</displayFormat>
+        <label>Service Record Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Service Records</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
