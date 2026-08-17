@@ -304,6 +304,30 @@
         <fields>TASK.WHAT_NAME</fields>
         <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Stage__c</fields>
+        <fields>Deal_Amount__c</fields>
+        <fields>Vehicle__c</fields>
+        <fields>Close_Date__c</fields>
+        <relatedList>Car_Deal__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Vehicle__c</fields>
+        <fields>Customer__c</fields>
+        <fields>Scheduled_Date__c</fields>
+        <fields>Status__c</fields>
+        <relatedList>Test_Drive__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Vehicle__c</fields>
+        <fields>Service_Date__c</fields>
+        <fields>Service_Type__c</fields>
+        <fields>Status__c</fields>
+        <relatedList>Service_Record__c.Account__c</relatedList>
+    </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
