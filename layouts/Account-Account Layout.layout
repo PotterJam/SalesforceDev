@@ -200,7 +200,6 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
-        <fields>CONTACT.NAME</fields>
         <fields>CONTACT.ACCOUNT_NAME</fields>
         <fields>CONTACT.TITLE</fields>
         <fields>ACCCONRELATION.IS_DIRECT</fields>
