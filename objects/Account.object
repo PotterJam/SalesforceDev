@@ -460,6 +460,15 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>TrickyAccount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates that this account has been flagged as tricky and may require additional attention.</description>
+        <externalId>false</externalId>
+        <label>Tricky Account</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
