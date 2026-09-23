@@ -156,8 +156,9 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Marketing</label>
     <nameField>
+        <displayFormat>MKT-{00000}</displayFormat>
         <label>Marketing Name</label>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Marketings</pluralLabel>
     <searchLayouts/>
