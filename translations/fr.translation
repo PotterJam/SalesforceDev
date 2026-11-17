@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><Translations xmlns="http://soap.sforce.com/2006/04/metadata">
-    <quickActions>
-        <label><!-- Escalate --></label>
-        <name>GlobalQuickActTest</name>
-    </quickActions>
+﻿<?xml version="1.0" encoding="utf-8"?><Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <quickActions>
         <label><!-- LogACall --></label>
         <name>LogACall</name>
@@ -30,10 +26,6 @@
     <quickActions>
         <label><!-- NewLead --></label>
         <name>NewLead</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- NewNote --></label>
-        <name>NewNote</name>
     </quickActions>
     <quickActions>
         <label><!-- NewOpportunity --></label>
