@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "Laser Printer",
+    "GearsetExternalId__c": "QAYJm5k100000UW70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "200.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "UAYQpMx200000UWt10"
+      }
+    }
+  ]
+}

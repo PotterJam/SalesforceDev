@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "SSD Hard Drive 256GB",
+    "GearsetExternalId__c": "CAIqnuA300000yQ70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "50.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "UAIYeGx400000yQt10"
+      }
+    }
+  ]
+}

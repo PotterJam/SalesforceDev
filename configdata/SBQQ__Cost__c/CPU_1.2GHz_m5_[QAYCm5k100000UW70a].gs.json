@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "CPU 1.2GHz m5",
+    "GearsetExternalId__c": "QAYCm5k100000UW70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "225.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "UAYMpMx200000UWt10"
+      }
+    }
+  ]
+}

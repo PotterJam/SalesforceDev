@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "Smartphone Heavy Duty Case",
+    "GearsetExternalId__c": "EAYc6Dk100000UW70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "10.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "UAYE9Zx200000UWt10"
+      }
+    }
+  ]
+}

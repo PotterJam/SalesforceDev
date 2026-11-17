@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "USB-C Charge Cable 2m",
+    "GearsetExternalId__c": "QAYYm5k100000UW70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "10.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "UAYYpMx200000UWt10"
+      }
+    }
+  ]
+}

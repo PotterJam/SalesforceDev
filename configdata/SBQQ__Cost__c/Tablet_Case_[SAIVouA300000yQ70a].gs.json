@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "Tablet Case",
+    "GearsetExternalId__c": "SAIVouA300000yQ70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "5.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "EAIzfGx400000yQt10"
+      }
+    }
+  ]
+}

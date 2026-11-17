@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "CPU 2.5GHz i7",
+    "GearsetExternalId__c": "AAYam5k100000UW70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "150.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "EAYapMx200000UWt10"
+      }
+    }
+  ]
+}

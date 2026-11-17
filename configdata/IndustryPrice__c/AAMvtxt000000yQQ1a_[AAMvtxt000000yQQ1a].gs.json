@@ -1,0 +1,20 @@
+{
+  "Object": "IndustryPrice__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "AAMvtxt000000yQQ1a",
+    "GearsetExternalId__c": "AAMvtxt000000yQQ1a",
+    "IPIndustry__c": "Education",
+    "IPPrice__c": "400.0",
+    "IPSLA__c": "Platinum"
+  },
+  "References": [
+    {
+      "Name": "IPProduct__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "EAIseGx400000yQt10"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Object": "ConsumptionRate",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "Description": "",
+    "GearsetDisplayName": "Data - 0 - 1001 - 0.0",
+    "GearsetExternalId__c": "EA00bN0000000UWoM0",
+    "LowerBound": "0",
+    "Price": "0.0",
+    "PricingMethod": "FlatFee",
+    "ProcessingOrder": "1",
+    "UpperBound": "1001"
+  },
+  "References": [
+    {
+      "Name": "ConsumptionSchedule",
+      "ReferencedObject": "ConsumptionSchedule",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "MA0tSN0000000UWhM0"
+      }
+    }
+  ]
+}

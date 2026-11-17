@@ -1,0 +1,24 @@
+{
+  "Object": "ProductConsumptionSchedule",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "Smartphone Standard Plan - Text",
+    "GearsetExternalId__c": "EAK5kQ0000000yQqM0"
+  },
+  "References": [
+    {
+      "Name": "ConsumptionSchedule",
+      "ReferencedObject": "ConsumptionSchedule",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "EAKw0Q0000000yQhM0"
+      }
+    },
+    {
+      "Name": "Product",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "UAIZeGx400000yQt10"
+      }
+    }
+  ]
+}

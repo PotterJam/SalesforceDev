@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "Electric Door Lock",
+    "GearsetExternalId__c": "KAInS0B300000yQ70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "50.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "UAIGgGx400000yQt10"
+      }
+    }
+  ]
+}

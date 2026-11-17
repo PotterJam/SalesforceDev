@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "RFID Key Card Printer",
+    "GearsetExternalId__c": "CAIlouA300000yQ70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "300.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "UAIEgGx400000yQt10"
+      }
+    }
+  ]
+}

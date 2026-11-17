@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "Productivity Suite",
+    "GearsetExternalId__c": "CAI7ouA300000yQ70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "10.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "EAIeeGx400000yQt10"
+      }
+    }
+  ]
+}

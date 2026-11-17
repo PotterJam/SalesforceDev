@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "Mobile Monitoring App",
+    "GearsetExternalId__c": "EAYq6Dk100000UW70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "0.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "UAYQ9Zx200000UWt10"
+      }
+    }
+  ]
+}

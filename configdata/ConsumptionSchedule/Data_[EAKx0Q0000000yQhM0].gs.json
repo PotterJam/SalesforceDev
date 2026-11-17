@@ -1,0 +1,19 @@
+{
+  "Object": "ConsumptionSchedule",
+  "Fields": {
+    "BillingTerm": "1",
+    "BillingTermUnit": "Month",
+    "CurrencyIsoCode": "GBP",
+    "Description": "",
+    "GearsetDisplayName": "Data",
+    "GearsetExternalId__c": "EAKx0Q0000000yQhM0",
+    "IsActive": "true",
+    "MatchingAttribute": "",
+    "Name": "Data",
+    "RatingMethod": "Tier",
+    "SBQQ__Category__c": "Rates",
+    "Type": "Slab",
+    "UnitOfMeasure": "MB"
+  },
+  "References": []
+}

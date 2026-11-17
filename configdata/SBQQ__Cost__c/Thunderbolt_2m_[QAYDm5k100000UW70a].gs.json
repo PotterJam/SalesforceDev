@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "Thunderbolt 2m",
+    "GearsetExternalId__c": "QAYDm5k100000UW70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "15.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "UAYNpMx200000UWt10"
+      }
+    }
+  ]
+}

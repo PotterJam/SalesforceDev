@@ -1,0 +1,26 @@
+{
+  "Object": "SBQQ__PriceRule__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "Config Data Integration Test Price Rule",
+    "GearsetExternalId__c": "21zdo33odijzboy4vp",
+    "Name": "Config Data Integration Test Price Rule",
+    "SBQQ__Active__c": "false",
+    "SBQQ__AdvancedCondition__c": "",
+    "SBQQ__ConditionsMet__c": "All",
+    "SBQQ__ConfiguratorEvaluationEvent__c": "",
+    "SBQQ__EvaluationEvent__c": "On Calculate",
+    "SBQQ__EvaluationOrder__c": "",
+    "SBQQ__LookupObject__c": "",
+    "SBQQ__TargetObject__c": ""
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": ""
+      }
+    }
+  ]
+}

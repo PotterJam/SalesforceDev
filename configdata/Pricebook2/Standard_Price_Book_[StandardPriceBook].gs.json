@@ -1,0 +1,14 @@
+{
+  "Object": "Pricebook2",
+  "Fields": {
+    "CurrencyIsoCode": "USD",
+    "Description": "",
+    "GearsetDisplayName": "Standard Price Book",
+    "GearsetExternalId__c": "StandardPriceBook",
+    "IsActive": "true",
+    "Name": "Standard Price Book",
+    "ValidFrom": "",
+    "ValidTo": ""
+  },
+  "References": []
+}

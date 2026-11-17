@@ -112,6 +112,10 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>GrossUnitPrice</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>ListPrice</fullName>
     </fields>
     <fields>
@@ -134,6 +138,9 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>ReferencePrice</fullName>
+    </fields>
+    <fields>
         <fullName>ServiceDate</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -152,6 +159,7 @@
         <lookupDialogsAdditionalFields>TotalPrice</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ODER_ITEM.START_DATE</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ODER_ITEM.END_DATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>QUOTE_LI</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>OriginalOrderItem</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Product2</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Quantity</lookupPhoneDialogsAdditionalFields>
@@ -160,6 +168,7 @@
         <lookupPhoneDialogsAdditionalFields>TotalPrice</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ODER_ITEM.START_DATE</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ODER_ITEM.END_DATE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>QUOTE_LI</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>OriginalOrderItem</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>Product2</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>UnitPrice</searchResultsAdditionalFields>

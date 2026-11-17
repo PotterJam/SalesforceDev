@@ -1,0 +1,20 @@
+{
+  "Object": "OutletLocale__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "HAMieFOH60000yQP1a",
+    "GearsetExternalId__c": "HAMieFOH60000yQP1a",
+    "OLCountry__c": "United States",
+    "OLRequired__c": "false",
+    "OLType__c": "Enable"
+  },
+  "References": [
+    {
+      "Name": "OLProduct__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "EAI1fGx400000yQt10"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Object": "SBQQ__ProductRule__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "RuleyMcRuleface",
+    "GearsetExternalId__c": "MAY1DM9300000UWj0a",
+    "Name": "RuleyMcRuleface",
+    "SBQQ__Active__c": "true",
+    "SBQQ__AdvancedCondition__c": "",
+    "SBQQ__ConditionsMet__c": "Any",
+    "SBQQ__ErrorMessage__c": "Hello world.",
+    "SBQQ__EvaluationEvent__c": "Always",
+    "SBQQ__EvaluationOrder__c": "",
+    "SBQQ__LookupMessageField__c": "",
+    "SBQQ__LookupObject__c": "",
+    "SBQQ__LookupProductField__c": "",
+    "SBQQ__LookupRequiredField__c": "",
+    "SBQQ__LookupTypeField__c": "",
+    "SBQQ__Scope__c": "Product",
+    "SBQQ__Type__c": "Validation"
+  },
+  "References": []
+}

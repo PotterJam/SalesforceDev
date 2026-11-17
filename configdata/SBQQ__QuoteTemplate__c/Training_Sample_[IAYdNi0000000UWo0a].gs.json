@@ -1,0 +1,108 @@
+{
+  "Object": "SBQQ__QuoteTemplate__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "Training Sample",
+    "GearsetExternalId__c": "IAYdNi0000000UWo0a",
+    "Name": "Training Sample",
+    "SBQQ__AllPackageProductsShown__c": "false",
+    "SBQQ__BillToTitle__c": "Bill To",
+    "SBQQ__BorderColor__c": "000000",
+    "SBQQ__BottomMargin__c": "0.5",
+    "SBQQ__BundledProductsShown__c": "false",
+    "SBQQ__CompanyCity__c": "San Francisco",
+    "SBQQ__CompanyCountry__c": "United States",
+    "SBQQ__CompanyEmail__c": "info@awcomputing.com",
+    "SBQQ__CompanyFax__c": "(650) 987-6544",
+    "SBQQ__CompanyName__c": "AW Computing",
+    "SBQQ__CompanyPhone__c": "(650) 987-6543",
+    "SBQQ__CompanyPostalCode__c": "94105",
+    "SBQQ__CompanySlogan__c": "",
+    "SBQQ__CompanyState__c": "CA",
+    "SBQQ__CompanyStreet__c": "1 Market St",
+    "SBQQ__ComponentProductsHidden__c": "false",
+    "SBQQ__CustomerDiscountField__c": "",
+    "SBQQ__CustomerDiscountLabel__c": "DISCOUNT",
+    "SBQQ__CustomerDiscountShown__c": "false",
+    "SBQQ__Default__c": "false",
+    "SBQQ__DeploymentStatus__c": "In Development",
+    "SBQQ__DiscountScheduleShown__c": "",
+    "SBQQ__ExcludedPages__c": "",
+    "SBQQ__ExcludeHeaderFooter__c": "",
+    "SBQQ__FontFamily__c": "Helvetica",
+    "SBQQ__FontSize__c": "9.0",
+    "SBQQ__FooterHeight__c": "15.0",
+    "SBQQ__GeneratorName__c": "",
+    "SBQQ__GrandTotalPrefix__c": "",
+    "SBQQ__GroupField__c": "",
+    "SBQQ__GroupFontFamily__c": "Helvetica",
+    "SBQQ__GroupFontSize__c": "9.0",
+    "SBQQ__GroupFontStyle__c": "Normal",
+    "SBQQ__GroupGap__c": "15.0",
+    "SBQQ__GroupShadingColor__c": "FFFFFF",
+    "SBQQ__GroupTextAlignment__c": "Left",
+    "SBQQ__GroupTextColor__c": "000000",
+    "SBQQ__HeaderHeight__c": "",
+    "SBQQ__HideGroupSubtotals__c": "false",
+    "SBQQ__IntroductionTitle__c": "",
+    "SBQQ__LeftMargin__c": "0.5",
+    "SBQQ__LineNumbering__c": "Start at quote",
+    "SBQQ__LineSortField__c": "",
+    "SBQQ__NotesTitle__c": "",
+    "SBQQ__PageHeight__c": "11.0",
+    "SBQQ__PageNumberAlignment__c": "",
+    "SBQQ__PageNumberPosition__c": "Footer",
+    "SBQQ__PageNumberText__c": "Page {0} of {1}",
+    "SBQQ__PageOrientation__c": "Portrait",
+    "SBQQ__PageWidth__c": "8.5",
+    "SBQQ__PartnerDiscountLabel__c": "PARTNER DISCOUNT",
+    "SBQQ__PartnerDiscountShown__c": "false",
+    "SBQQ__RenewedProductsShown__c": "true",
+    "SBQQ__RightMargin__c": "0.5",
+    "SBQQ__RollUpField__c": "",
+    "SBQQ__ShadingColor__c": "FFFFFF",
+    "SBQQ__ShipToTitle__c": "Ship To",
+    "SBQQ__SubGroupField__c": "",
+    "SBQQ__SubtotalField__c": "",
+    "SBQQ__SubtotalLabel__c": "",
+    "SBQQ__TermBodyIndent__c": "15.0",
+    "SBQQ__TermsConditionsTitle__c": "Terms & Conditions",
+    "SBQQ__TermsConditions__c": "",
+    "SBQQ__TermsNumbered__c": "false",
+    "SBQQ__TextColor__c": "",
+    "SBQQ__TopMargin__c": "0.5",
+    "SBQQ__TotalField__c": "",
+    "SBQQ__TotalLabel__c": "",
+    "SBQQ__TotalsHidden__c": "false"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__FooterContent__r",
+      "ReferencedObject": "SBQQ__TemplateContent__c",
+      "ReferencedFields": {
+        "GearsetExternalId__c": ""
+      }
+    },
+    {
+      "Name": "SBQQ__HeaderContent__r",
+      "ReferencedObject": "SBQQ__TemplateContent__c",
+      "ReferencedFields": {
+        "GearsetExternalId__c": ""
+      }
+    },
+    {
+      "Name": "SBQQ__LogoDocumentId__c",
+      "ReferencedObject": "Document",
+      "ReferencedFields": {
+        "DeveloperName": ""
+      }
+    },
+    {
+      "Name": "SBQQ__WatermarkId__c",
+      "ReferencedObject": "Document",
+      "ReferencedFields": {
+        "DeveloperName": ""
+      }
+    }
+  ]
+}
