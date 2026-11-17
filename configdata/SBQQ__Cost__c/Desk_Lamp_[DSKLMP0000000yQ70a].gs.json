@@ -1,0 +1,19 @@
+{
+  "Object": "SBQQ__Cost__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "Desk Lamp",
+    "GearsetExternalId__c": "DSKLMP0000000yQ70a",
+    "SBQQ__Active__c": "true",
+    "SBQQ__UnitCost__c": "35.0"
+  },
+  "References": [
+    {
+      "Name": "SBQQ__Product__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "DSKLMP0000000yQt10"
+      }
+    }
+  ]
+}
