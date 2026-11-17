@@ -1,0 +1,35 @@
+{
+  "Object": "SBQQ__ProductFeature__c",
+  "Fields": {
+    "AdditionalInstructions__c": "",
+    "CurrencyIsoCode": "GBP",
+    "External_ID__c": "",
+    "GearsetDisplayName": "6\" Smartphone - Chargers",
+    "GearsetExternalId__c": "YAYAM06200000UWh0a",
+    "Name": "Chargers",
+    "SBQQ__Category__c": "",
+    "SBQQ__ConfigurationFieldSet__c": "",
+    "SBQQ__DynamicProductFilterFieldSet__c": "",
+    "SBQQ__DynamicProductLookupFieldSet__c": "",
+    "SBQQ__MaxOptionCount__c": "",
+    "SBQQ__MinOptionCount__c": "0.0",
+    "SBQQ__Number__c": "10.0",
+    "SBQQ__OptionSelectionMethod__c": ""
+  },
+  "References": [
+    {
+      "Name": "SBQQ__ConfiguredSKU__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "EAYg8Zx200000UWt10"
+      }
+    },
+    {
+      "Name": "SBQQ__DiscountSchedule__r",
+      "ReferencedObject": "SBQQ__DiscountSchedule__c",
+      "ReferencedFields": {
+        "GearsetExternalId__c": ""
+      }
+    }
+  ]
+}

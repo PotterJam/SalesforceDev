@@ -1,0 +1,19 @@
+{
+  "Object": "ConsumptionSchedule",
+  "Fields": {
+    "BillingTerm": "1",
+    "BillingTermUnit": "Month",
+    "CurrencyIsoCode": "GBP",
+    "Description": "",
+    "GearsetDisplayName": "Talk",
+    "GearsetExternalId__c": "MA0rSN0000000UWhM0",
+    "IsActive": "true",
+    "MatchingAttribute": "",
+    "Name": "Talk",
+    "RatingMethod": "Tier",
+    "SBQQ__Category__c": "Rates",
+    "Type": "Slab",
+    "UnitOfMeasure": "Minutes"
+  },
+  "References": []
+}

@@ -1,0 +1,27 @@
+{
+  "Object": "PricebookEntry",
+  "Fields": {
+    "CurrencyIsoCode": "USD",
+    "GearsetDisplayName": "Standard Price Book - Product to attach pricebook - USD",
+    "GearsetExternalId__c": "ylwhuee5ovna1287z5",
+    "IsActive": "false",
+    "UnitPrice": "12.0",
+    "UseStandardPrice": "false"
+  },
+  "References": [
+    {
+      "Name": "Pricebook2",
+      "ReferencedObject": "Pricebook2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "StandardPriceBook"
+      }
+    },
+    {
+      "Name": "Product2",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "uapzztc6r2z4umgeln"
+      }
+    }
+  ]
+}

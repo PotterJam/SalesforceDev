@@ -1,0 +1,20 @@
+{
+  "Object": "IndustryPrice__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "AAM1uxt000000yQQ1a",
+    "GearsetExternalId__c": "AAM1uxt000000yQQ1a",
+    "IPIndustry__c": "Healthcare",
+    "IPPrice__c": "575.0",
+    "IPSLA__c": "Silver"
+  },
+  "References": [
+    {
+      "Name": "IPProduct__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "EAIteGx400000yQt10"
+      }
+    }
+  ]
+}

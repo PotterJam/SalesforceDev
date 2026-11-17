@@ -1,0 +1,20 @@
+{
+  "Object": "OutletLocale__c",
+  "Fields": {
+    "CurrencyIsoCode": "GBP",
+    "GearsetDisplayName": "HAMneFOH60000yQP1a",
+    "GearsetExternalId__c": "HAMneFOH60000yQP1a",
+    "OLCountry__c": "France",
+    "OLRequired__c": "false",
+    "OLType__c": "Enable"
+  },
+  "References": [
+    {
+      "Name": "OLProduct__r",
+      "ReferencedObject": "Product2",
+      "ReferencedFields": {
+        "GearsetExternalId__c": "UAIMfGx400000yQt10"
+      }
+    }
+  ]
+}
