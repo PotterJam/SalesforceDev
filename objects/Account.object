@@ -428,6 +428,36 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Sentiment__c</fullName>
+        <description>Overall sentiment of the relationship with this account (Very Good, Good or Bad), used to flag account health.</description>
+        <externalId>false</externalId>
+        <label>Sentiment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Very Good</fullName>
+                    <default>false</default>
+                    <label>Very Good</label>
+                </value>
+                <value>
+                    <fullName>Good</fullName>
+                    <default>false</default>
+                    <label>Good</label>
+                </value>
+                <value>
+                    <fullName>Bad</fullName>
+                    <default>false</default>
+                    <label>Bad</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>ShippingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
